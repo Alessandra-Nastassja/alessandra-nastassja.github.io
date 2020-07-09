@@ -151,6 +151,9 @@ p.portfolio-2{
 div.container-fluid.rodape{
   color: #fff;
 }
+div.container-fluid.rodape a:hover{
+	color: #000 !important;
+}
 .copyright{
   font-family: 'Quicksand', sans-serif;
 }
