@@ -63,7 +63,7 @@ p, li {
 	padding: 0px !important;
 }
 div.container-fluid.topo{
-	padding: 94px !important;
+	padding: 94px 94px 45px 94px !important;
 	background: #00e7b4;
 	width:100%;
 	margin-top:-30px;
