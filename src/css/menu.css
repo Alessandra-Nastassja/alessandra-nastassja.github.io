@@ -64,7 +64,7 @@ a:visited {
 
 a:hover,
 a:active {
-    color: #00e7b4 !important;
+    color: #ae00b3 !important;
     text-decoration: none;
 }
 
@@ -113,7 +113,7 @@ header {
 
 .nav-list a:hover {
     text-decoration: none;
-    color: #00e7b4;
+    color: #ae00b3;
 }
 
 .mobile-display {
@@ -125,7 +125,7 @@ header {
 }
 
 .modal-header{
-    background: #00e7b4;
+    background: #ae00b3;
 }
 h4.modal-title.text-center.acessibilidade{
     margin-left: auto;
@@ -145,14 +145,14 @@ h4.modal-title.text-center.acessibilidade{
 }
 .redes:hover{
   text-decoration: none;
-  background-color: #00e7b4;
+  background-color: #ae00b3;
 
 }
 .active-menu{
     text-decoration: underline;
 }
 button.btn.btn-info.acessibilidade.btn-block{
-    background: #00e7b4;
+    background: #ae00b3;
     margin-left: auto;
     /* font-size: 35px; */
     font-family: 'Quicksand', sans-serif;
@@ -208,7 +208,7 @@ button.btn.btn-info.acessibilidade.btn-block{
         max-width: -moz-min-content;
         max-width: min-content;
         margin: 1rem auto;
-        background-color: #00e7b4;
+        background-color: #ae00b3;
         text-align: center;
         color: #fff !important;
         padding: 15px 20px 15px 20px;
