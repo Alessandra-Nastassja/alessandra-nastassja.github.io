@@ -145,7 +145,7 @@ h4.modal-title.text-center.acessibilidade{
 }
 .redes:hover{
   text-decoration: none;
-  background-color: #ae00b3;
+  background-color: rgba(174,0,179,0.6);
 
 }
 .active-menu{
