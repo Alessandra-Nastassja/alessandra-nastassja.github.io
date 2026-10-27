@@ -724,8 +724,13 @@
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 48px;
+            gap: 32px;
             align-items: start;
+            padding-block: 40px 8px;
+        }
+
+        .about-grid .section-heading {
+            margin-bottom: 18px;
         }
 
         .about-copy {
@@ -734,13 +739,94 @@
         }
 
         .about-copy p {
-            margin: 0 0 16px;
+            margin: 0 0 10px;
+        }
+
+        .community {
+            padding-top: 24px;
+        }
+
+        .community-intro {
+            max-width: 680px;
+            margin: 0 0 24px;
+            color: var(--muted);
+        }
+
+        .community-intro .text-link {
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .community-grid {
+            display: flex;
+            gap: 20px;
+            scroll-behavior: smooth;
+            scroll-snap-type: x mandatory;
+        }
+
+        .community-item {
+            flex: 0 0 calc((100% - 60px) / 4);
+            scroll-snap-align: start;
+            overflow: hidden;
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            background: var(--accent-soft);
+        }
+
+        .community-media {
+            position: relative;
+            display: block;
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
+            background: var(--line);
+        }
+
+        .community-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+        }
+
+        .community-media--center img {
+            object-position: center;
+        }
+
+        .community-play {
+            position: absolute;
+            right: 12px;
+            bottom: 12px;
+            display: grid;
+            width: 42px;
+            height: 42px;
+            place-items: center;
+            border-radius: 50%;
+            background: var(--accent);
+            color: var(--paper);
+            font-size: .9rem;
+        }
+
+        .community-text {
+            padding: 18px 20px 22px;
+        }
+
+        .community-text h3 {
+            margin: 0 0 6px;
+            color: var(--accent-dark);
+            font-family: "Quicksand", "Open Sans", Arial, sans-serif;
+            font-size: 1.15rem;
+        }
+
+        .community-text p {
+            margin: 0;
+            color: var(--muted);
+            font-size: .88rem;
         }
 
         .instagram-grid {
             display: flex;
             gap: 16px;
-            margin-top: 28px;
+            margin-top: 16px;
             overflow-x: auto;
             padding-bottom: 8px;
             scroll-snap-type: x mandatory;
@@ -894,6 +980,10 @@
 
         @media (max-width: 800px) {
             .about-grid,
+            .community-item {
+                flex-basis: calc((100% - 40px) / 3);
+            }
+
             .intro-card {
                 grid-template-columns: 1fr;
                 gap: 32px;
@@ -1018,7 +1108,8 @@
                 grid-template-columns: 1fr;
             }
 
-            .project-card {
+            .project-card,
+            .community-item {
                 flex-basis: 100%;
             }
 
@@ -1104,7 +1195,8 @@
                 scroll-behavior: auto;
             }
 
-            .projects-grid {
+            .projects-grid,
+            .community-grid {
                 scroll-behavior: auto;
             }
 
@@ -1125,6 +1217,7 @@
                 <a href="#servicos">O que faço</a>
                 <a href="#projetos">Projetos</a>
                 <a href="#sobre">Sobre</a>
+                <a href="#comunidade">Comunidade</a>
                 <a href="#contato">Contato</a>
             </nav>
             <button class="a11y-toggle" id="a11y-open" type="button" aria-haspopup="dialog" aria-label="Abrir opções de acessibilidade" title="Acessibilidade">
@@ -1476,6 +1569,54 @@
 
 
 
+        <section class="container section community" id="comunidade" aria-labelledby="community-title">
+            <div class="section-heading">
+                <p class="section-label">Comunidade tech</p>
+                <h2 id="community-title">Embaixadora, mentora e palestrante</h2>
+            </div>
+            <p class="community-intro">
+                Sou embaixadora universitária da
+                <a class="text-link" href="https://www.womakerscode.org/" target="_blank" rel="noopener noreferrer">WoMakersCode</a>,
+                comunidade que incentiva mulheres a crescerem na tecnologia, e dou palestras na comunidade.
+            </p>
+            <div class="projects-viewport" id="community-viewport" role="region" aria-label="Carrossel de comunidade" aria-roledescription="carrossel" tabindex="0">
+                <div class="community-grid" id="community-track">
+                <article class="community-item">
+                    <div class="community-media"><img src="./src/img/tdc-2026.png" alt="Alessandra Nastassja apresentando uma palestra no palco do TDC 2026" loading="lazy"></div>
+                    <div class="community-text">
+                        <h3>Palestrante no TDC 2026</h3>
+                        <p>Compartilhando conhecimento sobre front-end, carreira e inclusão na tecnologia.</p>
+                    </div>
+                </article>
+                <article class="community-item">
+                    <div class="community-media"><img src="./src/img/mentora-fatec-sp.png" alt="Alessandra Nastassja em frente ao auditório da Fatec SP" loading="lazy"></div>
+                    <div class="community-text">
+                        <h3>Mentora na Fatec SP</h3>
+                        <p>Apoiando estudantes no começo da jornada em tecnologia.</p>
+                    </div>
+                </article>
+                <article class="community-item">
+                    <a class="community-media" href="https://www.instagram.com/nast.dev/reel/DXAUIeokfMS/" target="_blank" rel="noopener noreferrer" aria-label="Voluntária no GitHub Copilot Day: assistir ao vídeo no Instagram (abre em nova aba)"><img src="./src/img/voluntariado-reel.jpg" alt="Alessandra Nastassja no vídeo Um dia como voluntária no GitHub Copilot Day" loading="lazy"><span class="community-play" aria-hidden="true">▶</span></a>
+                    <div class="community-text">
+                        <h3>Voluntária no GitHub Copilot Day</h3>
+                        <p>Um dia como voluntária no GitHub Copilot Day. Assista ao vídeo no Instagram.</p>
+                    </div>
+                </article>
+                <article class="community-item">
+                    <a class="community-media community-media--center" href="https://www.instagram.com/p/DRsl0BiEW0K/?img_index=9" target="_blank" rel="noopener noreferrer" aria-label="Voluntária no workshop de Agentes de IA na FIAP: ver publicação no Instagram (abre em nova aba)"><img src="./src/img/voluntariado-fiap-agentes-ia.jpg" alt="Alessandra Nastassja apoiando participantes durante o workshop de Agentes de IA na FIAP" loading="lazy"></a>
+                    <div class="community-text">
+                        <h3>Voluntária no workshop de Agentes de IA</h3>
+                        <p>Um dia de voluntariado apoiando o workshop de Agentes de IA na FIAP.</p>
+                    </div>
+                </article>
+                </div>
+            </div>
+            <div class="projects-controls" role="group" aria-label="Controles do carrossel de comunidade">
+                <button type="button" id="community-previous" aria-label="Mostrar item anterior">&#8592;</button>
+                <button type="button" id="community-next" aria-label="Mostrar próximo item">&#8594;</button>
+            </div>
+        </section>
+
         <section class="container contact" id="contato" aria-labelledby="contact-title">
             <div>
                 <p class="section-label">Tem um projeto em mente?</p>
@@ -1511,7 +1652,7 @@
                 const track = document.querySelector(`#${prefix}-track`);
                 const previousButton = document.querySelector(`#${prefix}-previous`);
                 const nextButton = document.querySelector(`#${prefix}-next`);
-                const cards = Array.from(track.querySelectorAll(".project-card"));
+                const cards = Array.from(track.children);
 
                 const updateControls = () => {
                     const maxScroll = viewport.scrollWidth - viewport.clientWidth;
@@ -1536,6 +1677,7 @@
             };
 
             setupCarousel("projects");
+            setupCarousel("community");
         })();
     </script>
     <script>
