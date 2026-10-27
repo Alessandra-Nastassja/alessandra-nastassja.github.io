@@ -366,10 +366,45 @@
             margin: 12px 0 4px;
             color: var(--accent-dark);
             font-family: "Quicksand", "Open Sans", Arial, sans-serif;
-            font-size: clamp(3.7rem, 8vw, 7.4rem);
+            font-size: clamp(2.6rem, 6.2vw, 4.8rem);
             font-weight: 500;
-            letter-spacing: -.07em;
-            line-height: .92;
+            letter-spacing: -.03em;
+            line-height: 1;
+        }
+
+        .typing-title {
+            position: relative;
+        }
+
+        .typing-ghost {
+            visibility: hidden;
+        }
+
+        .typing-text {
+            position: absolute;
+            inset: 0;
+        }
+
+        .typing-text::after {
+            content: "";
+            display: inline-block;
+            width: .06em;
+            height: .85em;
+            margin-left: .08em;
+            vertical-align: -.05em;
+            background: var(--accent);
+            animation: caret-blink 1s steps(1) infinite;
+        }
+
+        .typing-text.typing-done::after,
+        html.a11y-no-motion .typing-text::after {
+            display: none;
+        }
+
+        @keyframes caret-blink {
+            50% {
+                opacity: 0;
+            }
         }
 
         .hero-role {
@@ -1087,7 +1122,7 @@
             }
 
             .hero h1 {
-                font-size: clamp(3.8rem, 17vw, 5.3rem);
+                font-size: clamp(2.4rem, 11vw, 3.4rem);
             }
 
             .intro-card,
@@ -1253,10 +1288,10 @@
         <section class="container hero" id="inicio" aria-labelledby="hero-title">
             <div class="hero-copy">
                 <p class="eyebrow">Tecnologia com propósito</p>
-                <h1 id="hero-title">Portfólio</h1>
+                <h1 id="hero-title" class="typing-title"><span class="sr-only">Front-end Engineer</span><span class="typing-ghost" aria-hidden="true">FRONT-END ENGINEER</span><span class="typing-text" id="typing-text" aria-hidden="true">FRONT-END ENGINEER</span></h1>
                 <p class="hero-role">Alessandra Nastassja</p>
                 <p class="hero-description">
-                    Desenvolvedora Front-end criando experiências digitais acessíveis,
+                    Criando experiências digitais acessíveis,
                     intuitivas e feitas para pessoas.
                 </p>
                 <div class="hero-actions">
@@ -1778,6 +1813,30 @@
             });
 
             apply();
+        })();
+    </script>
+    <script>
+        (() => {
+            const target = document.getElementById("typing-text");
+            const fullText = target.textContent;
+            const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+                || document.documentElement.classList.contains("a11y-no-motion");
+
+            if (reduced) {
+                target.classList.add("typing-done");
+                return;
+            }
+
+            target.textContent = "";
+            let index = 0;
+
+            const type = () => {
+                index += 1;
+                target.textContent = fullText.slice(0, index);
+                if (index < fullText.length) setTimeout(type, 90);
+            };
+
+            setTimeout(type, 500);
         })();
     </script>
     <script>
