@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Portfólio de Alessandra Nastassja, Front-end Engineer.">
+    <meta name="description" content="Alessandra Nastassja é Front-end Engineer há 8 anos, com foco em Angular, React, TypeScript e acessibilidade.">
     <meta name="author" content="Alessandra Nastassja">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -679,6 +679,11 @@
             transition: transform .25s ease;
         }
 
+        .project-image img.yuni-project-logo {
+            object-fit: contain;
+            padding: 28px;
+        }
+
         .project-content {
             padding: 19px;
         }
@@ -690,19 +695,148 @@
             letter-spacing: .14em;
         }
 
-        .project-content h3 {
+        .project-title-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
             margin: 5px 0;
+        }
+
+        .project-content h3 {
+            min-width: 0;
+            margin: 0;
             color: var(--accent-dark);
             font-family: "Quicksand", "Open Sans", Arial, sans-serif;
-            font-size: 1.35rem;
+            font-size: 1.15rem;
             font-weight: 500;
         }
 
         .project-content p {
-            min-height: 46px;
             margin: 0 0 14px;
             color: var(--muted);
             font-size: .83rem;
+        }
+
+        .project-tooltip {
+            display: inline-flex;
+        }
+
+        .tooltip-trigger {
+            display: grid;
+            width: 30px;
+            height: 30px;
+            flex: 0 0 30px;
+            place-items: center;
+            padding: 0;
+            border: 1px solid var(--line);
+            border-radius: 50%;
+            background: var(--paper);
+            color: var(--accent-dark);
+            cursor: pointer;
+            transition: background .2s ease, color .2s ease, border-color .2s ease;
+        }
+
+        .tooltip-trigger svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+        }
+
+        .tooltip-trigger:hover {
+            border-color: var(--accent);
+            background: var(--accent);
+            color: var(--paper);
+        }
+
+        .tooltip-trigger:focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: 3px;
+        }
+
+        .project-tooltip [popover] {
+            position: fixed;
+            top: 0;
+            left: 0;
+            max-width: min(280px, calc(100vw - 32px));
+            max-height: min(60vh, 360px);
+            overflow-y: auto;
+            margin: 0;
+            padding: 11px 13px;
+            border: 1px solid var(--accent-dark);
+            border-radius: 12px;
+            background: var(--accent-dark);
+            color: #fff;
+            box-shadow: 0 10px 28px rgb(23 19 23 / 22%);
+            font-size: .76rem;
+            line-height: 1.4;
+        }
+
+        .project-tooltip [popover]::backdrop {
+            background: transparent;
+        }
+
+        .project-tooltip [popover] strong {
+            display: block;
+            margin-bottom: 4px;
+            color: #f0a9f2;
+            font-size: .78rem;
+        }
+
+        .project-tooltip [popover] p {
+            margin: 0;
+            color: #fff;
+        }
+
+        .project-tooltip [popover] p + p {
+            margin-top: 12px;
+        }
+
+        .project-tooltip [popover] p strong {
+            margin-bottom: 2px;
+        }
+
+        .additional-projects {
+            margin-top: 24px;
+            border-top: 1px solid var(--line);
+            padding-top: 16px;
+        }
+
+        .additional-projects summary {
+            width: fit-content;
+            color: var(--accent-dark);
+            font-size: .9rem;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .additional-projects summary:focus-visible,
+        .additional-projects a:focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: 3px;
+        }
+
+        .additional-projects ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 18px;
+            margin: 16px 0 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .additional-projects li {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px 12px;
+        }
+
+        .additional-projects a {
+            color: var(--accent-dark);
+            font-size: .85rem;
+            font-weight: 600;
+            text-decoration: underline;
+            text-underline-offset: 3px;
         }
 
         .project-tech {
@@ -930,6 +1064,21 @@
             font-weight: 400;
         }
 
+        .skill-groups {
+            display: grid;
+            gap: 18px;
+        }
+
+        .skill-group h3 {
+            margin: 0;
+            color: var(--accent-dark);
+            font-size: .9rem;
+        }
+
+        .skill-group .skill-list {
+            margin-top: 8px;
+        }
+
         .contact {
             display: grid;
             grid-template-columns: 1fr auto;
@@ -1148,10 +1297,6 @@
                 flex-basis: 100%;
             }
 
-            .project-content p {
-                min-height: 0;
-            }
-
             .contact .button {
                 justify-self: start;
             }
@@ -1290,12 +1435,12 @@
                 <h1 id="hero-title" class="typing-title"><span class="sr-only">Front-end Engineer</span><span class="typing-ghost" aria-hidden="true">FRONT-END ENGINEER</span><span class="typing-text" id="typing-text" aria-hidden="true">FRONT-END ENGINEER</span></h1>
                 <p class="hero-role">Alessandra Nastassja</p>
                 <p class="hero-description">
-                    Há 8 anos desenvolvo interfaces web com Angular, React e TypeScript,
-                    unindo acessibilidade, qualidade e experiências intuitivas.
+                    Com 8 anos de experiência em Angular, React e TypeScript, busco contribuir
+                    para produtos digitais acessíveis e de qualidade, em times colaborativos.
                 </p>
                 <div class="hero-actions">
                     <a class="button" href="#projetos">Conheça meus projetos</a>
-                    <a class="button button--outline" href="#contato">Vamos conversar</a>
+                    <a class="button button--outline" href="./src/pdf/curriculo-alessandra.pdf" target="_blank" rel="noopener noreferrer">Currículo (PDF)</a>
                 </div>
             </div>
             <div class="hero-visual">
@@ -1331,8 +1476,7 @@
             <div>
                 <h2 id="intro-title">Olá, mundo!</h2>
                 <p>
-                    Sou Front-end Engineer com 8 anos de experiência e apaixonada
-                    por tecnologia, educação e inclusão. Moro em São Paulo, Brasil.
+                    Apaixonada por tecnologia, educação e inclusão. Moro em São Paulo, Brasil.
                 </p>
             </div>
             <div class="quick-facts" role="group" aria-label="Resumo profissional">
@@ -1391,8 +1535,19 @@
                         </div>
                         <div class="project-content">
                             <span class="project-number">01 / ARQUITETURA</span>
-                            <h3>Micro Front-end</h3>
-                            <p>Shell que orquestra micro front-ends de cartões e carrinho, comparando arquiteturas no TCC.</p>
+                            <div class="project-title-row">
+                                <h3>Micro Front-end</h3>
+                                <div class="project-tooltip">
+                                    <button class="tooltip-trigger" type="button" popovertarget="project-info-1" aria-controls="project-info-1" aria-describedby="project-info-1" aria-expanded="false" aria-label="Mais informações sobre Micro Front-end" title="Mais informações sobre Micro Front-end">
+                                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 2a8 8 0 1 1 0 16 8 8 0 0 1 0-16Zm-1 7h2v6h-2v-6Zm1-4a1.25 1.25 0 1 0 0 2.5A1.25 1.25 0 0 0 12 7Z"/></svg>
+                                    </button>
+                                    <div id="project-info-1" popover="auto" role="tooltip" aria-label="Contribuição e decisão técnica">
+                                        <p><strong>Minha contribuição</strong>Implementei a listagem de cartões e a comunicação da quantidade de itens entre shell e carrinho.</p>
+                                        <p><strong>Decisão técnica</strong>Rotas carregam aplicações remotas independentes com Module Federation.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>Shell Angular para integrar as experiências de cartões e carrinho.</p>
                             <ul class="project-tech" aria-label="Tecnologias usadas"><li>Angular</li><li>TypeScript</li><li>Module Federation</li><li>SCSS</li></ul>
                             <div class="project-links">
                                 <a href="https://github.com/frontend-architecture-comparison/shell-varejo" target="_blank" rel="noopener noreferrer">GitHub</a>
@@ -1405,8 +1560,19 @@
                         </div>
                         <div class="project-content">
                             <span class="project-number">02 / FINANÇAS</span>
-                            <h3>Controle de Gastos</h3>
-                            <p>App de controle de gastos pessoais desenvolvido na Imersão Tech da comunidade @Womakerscode.</p>
+                            <div class="project-title-row">
+                                <h3>Controle de Gastos</h3>
+                                <div class="project-tooltip">
+                                    <button class="tooltip-trigger" type="button" popovertarget="project-info-2" aria-controls="project-info-2" aria-describedby="project-info-2" aria-expanded="false" aria-label="Mais informações sobre Controle de Gastos" title="Mais informações sobre Controle de Gastos">
+                                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 2a8 8 0 1 1 0 16 8 8 0 0 1 0-16Zm-1 7h2v6h-2v-6Zm1-4a1.25 1.25 0 1 0 0 2.5A1.25 1.25 0 0 0 12 7Z"/></svg>
+                                    </button>
+                                    <div id="project-info-2" popover="auto" role="tooltip" aria-label="Contribuição e decisão técnica">
+                                        <p><strong>Minha contribuição</strong>Implementei o formulário, o histórico, a máscara de moeda e a integração com a API mock.</p>
+                                        <p><strong>Decisão técnica</strong>Separei formulário e histórico em componentes e concentrei as chamadas HTTP em um serviço.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>Aplicação de controle de gastos pessoais criada na Imersão Tech.</p>
                             <ul class="project-tech" aria-label="Tecnologias usadas"><li>Angular</li><li>TypeScript</li><li>SCSS</li><li>Figma</li></ul>
                             <div class="project-links">
                                 <a href="https://www.figma.com/design/7Q3wzTtJCbsESbESZnPZNM/Controle-de-gastos?node-id=0-1&amp;t=yfv0ZVivwp16C3MF-1" target="_blank" rel="noopener noreferrer">Figma</a>
@@ -1417,16 +1583,27 @@
 
                     <article class="project-card">
                         <div class="project-image">
-                            <img src="./src/img/planner-finance.png" alt="Tela do Planner Finance" loading="lazy">
+                            <img class="yuni-project-logo" src="https://raw.githubusercontent.com/Yuni-Finance/yuni-fed/main/src/assets/pig.png" alt="Ilustração do projeto Yuni Finance" loading="lazy">
                         </div>
                         <div class="project-content">
                             <span class="project-number">03 / FINANÇAS</span>
-                            <h3>Planner Finance</h3>
-                            <p>Uma ferramenta para organizar o planejamento financeiro pessoal.</p>
-                            <ul class="project-tech" aria-label="Tecnologias usadas"><li>Angular</li><li>TypeScript</li><li>RxJS</li><li>SCSS</li></ul>
+                            <div class="project-title-row">
+                                <h3>Yuni Finance</h3>
+                                <div class="project-tooltip">
+                                    <button class="tooltip-trigger" type="button" popovertarget="project-info-3" aria-controls="project-info-3" aria-describedby="project-info-3" aria-expanded="false" aria-label="Mais informações sobre Yuni Finance" title="Mais informações sobre Yuni Finance">
+                                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 2a8 8 0 1 1 0 16 8 8 0 0 1 0-16Zm-1 7h2v6h-2v-6Zm1-4a1.25 1.25 0 1 0 0 2.5A1.25 1.25 0 0 0 12 7Z"/></svg>
+                                    </button>
+                                    <div id="project-info-3" popover="auto" role="tooltip" aria-label="Contribuição e decisão técnica">
+                                        <p><strong>Minha contribuição</strong>Desenvolvimento de uma plataforma para acompanhar patrimônio, investimentos e metas financeiras.</p>
+                                        <p><strong>Decisão técnica</strong>Separação entre frontend React e API Spring Boot, com PostgreSQL e Docker Compose no backend.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>Plataforma web para gestão de patrimônio, investimentos e metas financeiras pessoais.</p>
+                            <ul class="project-tech" aria-label="Tecnologias usadas"><li>Java</li><li>Spring Boot</li><li>PostgreSQL</li><li>React</li><li>TypeScript</li><li>TailwindCSS</li></ul>
                             <div class="project-links">
-                                <a href="https://planer-future.netlify.app/home" target="_blank" rel="noopener noreferrer">Ver projeto</a>
-                                <a href="https://github.com/Alessandra-Nastassja/planner-future" target="_blank" rel="noopener noreferrer">GitHub</a>
+                                <a href="https://yuni-fed.onrender.com" target="_blank" rel="noopener noreferrer">Ver projeto</a>
+                                <a href="https://github.com/Yuni-Finance" target="_blank" rel="noopener noreferrer">GitHub</a>
                             </div>
                         </div>
                     </article>
@@ -1578,24 +1755,30 @@
             </div>
             <div>
                 <div class="section-heading">
-                    <p class="section-label">Ferramentas do dia a dia</p>
+                    <p class="section-label">Tecnologias e práticas</p>
                     <h2>Habilidades</h2>
                 </div>
-                <ul class="skill-list" aria-label="Tecnologias e habilidades">
-                    <li>Angular</li>
-                    <li>React</li>
-                    <li>Next.js</li>
-                    <li>TypeScript</li>
-                    <li>JavaScript</li>
-                    <li>HTML5</li>
-                    <li>CSS3 / Sass</li>
-                    <li>RxJS</li>
-                    <li>Jest</li>
-                    <li>Cypress / Playwright</li>
-                    <li>Git / GitHub</li>
-                    <li>Azure / AWS</li>
-                    <li>GitHub Copilot</li>
-                </ul>
+                <div class="skill-groups">
+                    <section class="skill-group" aria-labelledby="skills-frontend">
+                        <h3 id="skills-frontend">Front-end</h3>
+                        <ul class="skill-list">
+                            <li>Angular</li><li>React</li><li>Next.js</li><li>TypeScript</li>
+                            <li>JavaScript</li><li>HTML5</li><li>CSS3 / Sass</li><li>RxJS</li>
+                        </ul>
+                    </section>
+                    <section class="skill-group" aria-labelledby="skills-quality">
+                        <h3 id="skills-quality">Testes e qualidade</h3>
+                        <ul class="skill-list">
+                            <li>Jest</li><li>Cypress</li><li>Playwright</li><li>Acessibilidade</li>
+                        </ul>
+                    </section>
+                    <section class="skill-group" aria-labelledby="skills-tools">
+                        <h3 id="skills-tools">Ferramentas</h3>
+                        <ul class="skill-list">
+                            <li>Git / GitHub</li><li>Azure / AWS</li><li>GitHub Copilot</li>
+                        </ul>
+                    </section>
+                </div>
             </div>
         </section>
 
@@ -1737,6 +1920,42 @@
                     link.setAttribute("aria-label", `${link.textContent.trim()} ${title}`);
                 });
             });
+
+            const positionTooltip = (tooltip) => {
+                const trigger = tooltip.closest(".project-tooltip").querySelector(".tooltip-trigger");
+                const triggerRect = trigger.getBoundingClientRect();
+                const tooltipRect = tooltip.getBoundingClientRect();
+                const edge = 16;
+                const left = Math.max(
+                    edge,
+                    Math.min(triggerRect.left + (triggerRect.width - tooltipRect.width) / 2, window.innerWidth - tooltipRect.width - edge)
+                );
+                const above = triggerRect.top >= tooltipRect.height + edge;
+                const preferredTop = above
+                    ? triggerRect.top - tooltipRect.height - 12
+                    : Math.min(triggerRect.bottom + 12, window.innerHeight - tooltipRect.height - edge);
+                const top = Math.max(edge, Math.min(preferredTop, window.innerHeight - tooltipRect.height - edge));
+
+                tooltip.style.left = `${left}px`;
+                tooltip.style.top = `${top}px`;
+            };
+
+            const openTooltips = document.querySelectorAll('.project-tooltip [popover][role="tooltip"]');
+            openTooltips.forEach((tooltip) => {
+                const trigger = tooltip.closest(".project-tooltip").querySelector(".tooltip-trigger");
+                tooltip.addEventListener("toggle", (event) => {
+                    trigger.setAttribute("aria-expanded", String(event.newState === "open"));
+                    if (event.newState === "open") positionTooltip(tooltip);
+                });
+            });
+
+            const repositionOpenTooltips = () => {
+                openTooltips.forEach((tooltip) => {
+                    if (tooltip.matches(":popover-open")) positionTooltip(tooltip);
+                });
+            };
+            window.addEventListener("resize", repositionOpenTooltips);
+            window.addEventListener("scroll", repositionOpenTooltips, true);
 
             document.querySelectorAll('a[target="_blank"]').forEach((link) => {
                 const hint = document.createElement("span");
