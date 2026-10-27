@@ -1,1017 +1,1642 @@
-<!DOCTYPE html>
-<html lang="pt-br" dir="ltr">
-
+<!doctype html>
+<html lang="pt-br">
 <head>
-    <title>ALESSANDRA NASTASSJA | FRONT-END ENGINEER </title>
-    <!-- Meta tags -->
     <meta charset="utf-8">
-    <meta name="robots" content="index,follow">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description"
-        content="Alessandra Nastassja, freelancer. Front-end. Site Responsivo, Profissional. Sites únicos. Reformulação de sites.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Portfólio de Alessandra Nastassja, desenvolvedora Front-end.">
     <meta name="author" content="Alessandra Nastassja">
-    <meta name="keywords" content="Alessandra Nastassja, Desenvolvimento web, freelancer, brazilian, Front-end, web design,
-    JavaScript, ux, ui, seo, sites personalizaos, sites responsivos, criação de sites">
-    <meta name="reply-to" content="alessandra.nastassja@hotmail.com">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="msvalidate.01" content="AD6BB0BF9DDAA70920219B1CA59DF611" />
-
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="./src/img/marca.jpeg" type="image/x-icon">
-    <link rel="icon" href="./src/img/marca.jpeg" type="image/x-icon">
-
-    <!-- Canonical -->
-    <link rel=”canonical” href=”www.alessandranastassja.com.br” />
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="./src/bootstrap/css/bootstrap.min.css">
-
-    <!-- CSS custome -->
-    <link rel="stylesheet" type="text/css" href="./src/css/style.css">
-    <link rel="stylesheet" type="text/css" href="./src/css/sobre.css">
-    <link rel="stylesheet" type="text/css" href="./src/css/menu.css">
-    <link rel="stylesheet" type="text/css" href="./src/css/efeito-imagem.css">
-    <link rel="stylesheet" type="text/css" href="./src/css/auto-contraste.css">
-
-    <!-- Aumenta/Diminui fonte -->
-    <script type="text/javascript" src="./src/js/fonte.js"></script>
-
-    <!-- Scroll -->
-    <script src="./src/js/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript"></script>
-
-    <script>
-        jQuery(document).ready(function ($) {
-            $(".scroll").click(function (event) {
-                event.preventDefault();
-                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
-            });
-        });
-    </script>
-
-    <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) {
-            w[l] = w[l] || []; w[l].push({
-                'gtm.start':
-                    new Date().getTime(), event: 'gtm.js'
-            }); var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-NXJQ54DS');
-    </script>
-    <!-- End Google Tag Manager -->
-
-    <!-- Google tradutor -->
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({ pageLanguage: 'pt', includedLanguages: 'en,es,pt', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, gaTrack: true, gaId: 'G-FL7J1019SC' }, 'google_translate_element');
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&family=Quicksand:wght@500;700&display=swap">
+    <title>Portfólio | Alessandra Nastassja</title>
+    <style>
+        :root {
+            color-scheme: light;
+            --accent: #ae00b3;
+            --accent-dark: #390b3c;
+            --accent-soft: #f8eff8;
+            --ink: #171317;
+            --muted: #686168;
+            --paper: #fff;
+            --line: #eadfea;
+            --page-width: 1120px;
         }
-    </script>
-    <script type="text/javascript"
-        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-    <!-- Google Adwords -->
-    <!-- Event snippet for Teste conversão 1 conversion page -->
-    <script>
-        gtag('event', 'conversion', { 'send_to': 'AW-851780928/taGUCKXPsZMBEMDKlJYD' });
-        gtag('config', 'AW-851780928');
-    </script>
-    <script>
-        $(document).ready(function ($) {
-            $('#freelas').on('click', function () {
-                $('.inicio').removeClass('active-menu');
-                $('.freelas').addClass('active-menu');
-            });
-            $('#sobre').on('click', function () {
-                $('.inicio').removeClass('active-menu');
-                $('.sobre').addClass('active-menu');
-            });
-            $('#inicio').on('click', function () {
-                $('.sobre').removeClass('active-menu');
-                $('.inicio').addClass('active-menu');
-            });
-        });
-    </script>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        body {
+            margin: 0;
+            background: var(--paper);
+            color: var(--ink);
+            font-family: "Open Sans", Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        a:focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: 4px;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: min(var(--page-width), calc(100% - 48px));
+            margin-inline: auto;
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 16px;
+            z-index: 1000;
+            padding: 10px 18px;
+            border-radius: 999px;
+            background: var(--accent-dark);
+            color: #fff;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .skip-link:focus {
+            top: 12px;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            clip-path: inset(50%);
+            white-space: nowrap;
+        }
+
+        :focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: 3px;
+        }
+
+        main:focus {
+            outline: none;
+        }
+
+        @media (forced-colors: active) {
+            .a11y-toggle,
+            .a11y-option button,
+            .contact-links a,
+            .project-links a,
+            .projects-controls button {
+                border-color: ButtonText;
+            }
+        }
+
+        .site-header {
+            display: flex;
+            min-height: 82px;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .brand {
+            color: var(--accent-dark);
+            font-size: .92rem;
+            font-weight: 800;
+            letter-spacing: .08em;
+            text-decoration: none;
+        }
+
+        .site-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 28px;
+        }
+
+        .site-nav a {
+            color: var(--muted);
+            font-size: .78rem;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .site-nav a:hover,
+        .text-link {
+            color: var(--accent);
+        }
+
+        .about-copy .text-link {
+            font-weight: 800;
+            text-decoration: none;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .a11y-toggle {
+            display: grid;
+            width: 38px;
+            height: 38px;
+            place-items: center;
+            padding: 0;
+            border: 1px solid #b8b8b8;
+            border-radius: 50%;
+            background: transparent;
+            color: var(--accent-dark);
+            cursor: pointer;
+            transition: background .2s ease, color .2s ease, border-color .2s ease;
+        }
+
+        .a11y-toggle:hover {
+            border-color: var(--accent);
+            background: var(--accent);
+            color: var(--paper);
+        }
+
+        .a11y-toggle:focus-visible,
+        .a11y-modal button:focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: 3px;
+        }
+
+        .a11y-toggle svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        .a11y-modal {
+            width: min(420px, calc(100% - 32px));
+            padding: 28px;
+            border: 0;
+            border-radius: 20px;
+            background: var(--paper);
+            color: var(--ink);
+            box-shadow: 0 24px 60px rgb(57 11 60 / 28%);
+        }
+
+        .a11y-modal::backdrop {
+            background: rgb(23 19 23 / 55%);
+        }
+
+        .a11y-modal-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            margin-bottom: 18px;
+        }
+
+        .a11y-modal h2 {
+            margin: 0;
+            color: var(--accent-dark);
+            font-size: 1.25rem;
+        }
+
+        .a11y-close {
+            width: 34px;
+            height: 34px;
+            border: 1px solid #b8b8b8;
+            border-radius: 50%;
+            background: transparent;
+            color: var(--accent-dark);
+            font-size: 1.1rem;
+            line-height: 1;
+            cursor: pointer;
+        }
+
+        .a11y-close:hover {
+            border-color: var(--accent);
+            background: var(--accent);
+            color: var(--paper);
+        }
+
+        .a11y-options {
+            display: grid;
+            gap: 10px;
+        }
+
+        .a11y-option {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 12px 14px;
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            font-size: .9rem;
+            font-weight: 600;
+        }
+
+        .a11y-option button {
+            min-width: 44px;
+            padding: 6px 12px;
+            border: 1px solid #b8b8b8;
+            border-radius: 999px;
+            background: transparent;
+            color: var(--accent-dark);
+            font: inherit;
+            font-size: .8rem;
+            cursor: pointer;
+        }
+
+        .a11y-option button:hover,
+        .a11y-option button[aria-pressed="true"] {
+            border-color: var(--accent);
+            background: var(--accent);
+            color: var(--paper);
+        }
+
+        .a11y-size {
+            display: flex;
+            gap: 8px;
+        }
+
+        .a11y-note {
+            margin: 16px 0 0;
+            color: var(--muted);
+            font-size: .8rem;
+        }
+
+        .quick-fact--wide {
+            grid-column: 1 / -1;
+        }
+
+        .a11y-reset {
+            margin-top: 16px;
+            padding: 8px 18px;
+            border: 1px solid #b8b8b8;
+            border-radius: 999px;
+            background: transparent;
+            color: var(--accent-dark);
+            font: inherit;
+            font-size: .85rem;
+            cursor: pointer;
+        }
+
+        .a11y-reset:hover {
+            border-color: var(--accent);
+            background: var(--accent);
+            color: var(--paper);
+        }
+
+        html.a11y-contrast {
+            filter: contrast(1.35);
+        }
+
+        html.a11y-contrast body {
+            --muted: #3a343a;
+            --line: #b8b8b8;
+        }
+
+        html.a11y-grayscale body {
+            filter: grayscale(1);
+        }
+
+        html.a11y-underline a {
+            text-decoration: underline !important;
+            text-underline-offset: 3px;
+        }
+
+        html.a11y-readable body,
+        html.a11y-readable button {
+            font-family: Verdana, Arial, sans-serif;
+            letter-spacing: .02em;
+            line-height: 1.8;
+        }
+
+        html.a11y-no-motion *,
+        html.a11y-no-motion *::before,
+        html.a11y-no-motion *::after {
+            scroll-behavior: auto !important;
+            transition: none !important;
+            animation: none !important;
+        }
+
+        .hero {
+            position: relative;
+            display: grid;
+            min-height: 510px;
+            grid-template-columns: 1.08fr .92fr;
+            align-items: center;
+            gap: 48px;
+            padding-block: 48px 72px;
+        }
+
+        .hero-copy {
+            position: relative;
+            z-index: 1;
+        }
+
+        .eyebrow,
+        .section-label {
+            color: var(--accent);
+            font-size: .72rem;
+            font-weight: 800;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            max-width: 660px;
+            margin: 12px 0 4px;
+            color: var(--accent-dark);
+            font-family: "Quicksand", "Open Sans", Arial, sans-serif;
+            font-size: clamp(3.7rem, 8vw, 7.4rem);
+            font-weight: 500;
+            letter-spacing: -.07em;
+            line-height: .92;
+        }
+
+        .hero-role {
+            margin: 12px 0 18px;
+            color: var(--accent);
+            font-family: "Quicksand", "Open Sans", Arial, sans-serif;
+            font-size: clamp(1.6rem, 4vw, 2.7rem);
+            font-style: italic;
+        }
+
+        .hero-description {
+            max-width: 440px;
+            margin: 0;
+            color: var(--muted);
+            font-size: 1rem;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 28px;
+        }
+
+        .button {
+            display: inline-flex;
+            min-height: 46px;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 18px;
+            border: 1px solid var(--accent);
+            border-radius: 999px;
+            background: var(--accent);
+            color: var(--paper);
+            font-size: .85rem;
+            font-weight: 400;
+            text-decoration: none;
+            transition: background .2s ease, color .2s ease, transform .2s ease;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            background: var(--accent-dark);
+            border-color: var(--accent-dark);
+            color: var(--paper);
+        }
+
+        .button--outline {
+            background: transparent;
+            color: var(--accent-dark);
+        }
+
+        .button--outline:hover {
+            color: var(--paper);
+        }
+
+        .hero-visual {
+            display: grid;
+            justify-items: center;
+            gap: 20px;
+        }
+
+        .hero-portrait {
+            position: relative;
+            justify-self: center;
+            width: min(100%, 410px);
+            margin: 0;
+            aspect-ratio: 1 / 1.08;
+            overflow: hidden;
+            border-radius: 48% 48% 30% 30%;
+            background: var(--accent-soft);
+        }
+
+        .hero-portrait::before {
+            position: absolute;
+            inset: 22px;
+            border: 1px solid rgb(174 0 179 / 24%);
+            border-radius: inherit;
+            content: "";
+        }
+
+        .hero-portrait img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 30%;
+        }
+
+        .intro-card {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 38px;
+            padding: 34px clamp(24px, 5vw, 56px);
+            border-radius: 24px;
+            background: var(--accent-dark);
+            color: var(--paper);
+        }
+
+        .intro-card h2 {
+            margin: 0 0 10px;
+            color: #f0a9f2;
+            font-family: "Quicksand", "Open Sans", Arial, sans-serif;
+            font-size: 2rem;
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        .intro-card p {
+            max-width: 550px;
+            margin: 0;
+            color: rgb(255 255 255 / 82%);
+            font-size: .9rem;
+        }
+
+        .quick-facts {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            align-content: center;
+            gap: 14px 22px;
+        }
+
+        .quick-facts div {
+            padding-left: 13px;
+            border-left: 2px solid #d757dc;
+        }
+
+        .quick-facts strong,
+        .quick-facts span {
+            display: block;
+        }
+
+        .quick-facts strong {
+            font-size: .88rem;
+        }
+
+        .quick-facts span {
+            color: rgb(255 255 255 / 72%);
+            font-size: .76rem;
+        }
+
+        .section {
+            padding-block: 76px;
+        }
+
+        .section-heading {
+            margin-bottom: 28px;
+        }
+
+        .section-heading h2 {
+            margin: 6px 0 0;
+            color: var(--accent-dark);
+            font-family: "Quicksand", "Open Sans", Arial, sans-serif;
+            font-size: clamp(2rem, 4vw, 3.1rem);
+            font-weight: 500;
+            letter-spacing: -.04em;
+            line-height: 1.15;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 14px;
+        }
+
+        .service {
+            min-height: 180px;
+            padding: 22px;
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            background: #fff;
+        }
+
+        .service-icon {
+            display: grid;
+            width: 42px;
+            height: 42px;
+            place-items: center;
+            margin-bottom: 14px;
+            border-radius: 50%;
+            background: var(--accent-soft);
+            color: var(--accent);
+            font-size: 1.15rem;
+            font-weight: 800;
+        }
+
+        .service h3 {
+            margin: 0 0 6px;
+            color: var(--accent-dark);
+            font-size: 1rem;
+        }
+
+        .service p {
+            margin: 0;
+            color: var(--muted);
+            font-size: .8rem;
+        }
+
+        .projects {
+            background: var(--accent-soft);
+        }
+
+        .projects-grid {
+            display: flex;
+            gap: 20px;
+            scroll-behavior: smooth;
+            scroll-snap-type: x mandatory;
+        }
+
+        .project-card {
+            flex: 0 0 calc((100% - 40px) / 3);
+            overflow: hidden;
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            background: var(--paper);
+            scroll-snap-align: start;
+        }
+
+        .projects-viewport {
+            overflow-x: auto;
+            scrollbar-width: thin;
+            scrollbar-color: var(--accent) var(--line);
+        }
+
+        .projects-controls {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .projects-controls button {
+            display: grid;
+            width: 42px;
+            height: 42px;
+            place-items: center;
+            border: 1px solid var(--accent);
+            border-radius: 50%;
+            background: var(--paper);
+            color: var(--accent-dark);
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        .projects-controls button:hover:not(:disabled) {
+            background: var(--accent);
+            color: var(--paper);
+        }
+
+        .projects-controls button:disabled {
+            cursor: not-allowed;
+            opacity: .4;
+        }
+
+        .projects-controls button:focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: 3px;
+        }
+
+        .project-image {
+            display: grid;
+            min-height: 205px;
+            place-items: center;
+            overflow: hidden;
+            background: #f3e9f3;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 205px;
+            object-fit: cover;
+            transition: transform .25s ease;
+        }
+
+        .project-content {
+            padding: 19px;
+        }
+
+        .project-number {
+            color: var(--accent);
+            font-size: .7rem;
+            font-weight: 800;
+            letter-spacing: .14em;
+        }
+
+        .project-content h3 {
+            margin: 5px 0;
+            color: var(--accent-dark);
+            font-family: "Quicksand", "Open Sans", Arial, sans-serif;
+            font-size: 1.35rem;
+            font-weight: 500;
+        }
+
+        .project-content p {
+            min-height: 46px;
+            margin: 0 0 14px;
+            color: var(--muted);
+            font-size: .83rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin: 0 0 16px;
+            padding: 0;
+            list-style: none;
+        }
+
+        .project-tech li {
+            padding: 3px 9px;
+            border-radius: 999px;
+            background: var(--accent-soft);
+            color: var(--accent-dark);
+            font-size: .75rem;
+            font-weight: 400;
+        }
+
+        .project-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .project-links a {
+            display: inline-flex;
+            min-height: 36px;
+            align-items: center;
+            justify-content: center;
+            padding: 7px 13px;
+            border: 1px solid #b8b8b8;
+            border-radius: 999px;
+            background: transparent;
+            color: var(--accent-dark);
+            font-size: .75rem;
+            font-weight: 400;
+            text-decoration: none;
+            transition: background .2s ease, color .2s ease, border-color .2s ease;
+        }
+
+        .project-links a:hover {
+            border-color: var(--accent);
+            background: var(--accent);
+            color: var(--paper);
+        }
+
+        .project-links a:focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: 3px;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: start;
+        }
+
+        .about-copy {
+            max-width: 550px;
+            color: var(--muted);
+        }
+
+        .about-copy p {
+            margin: 0 0 16px;
+        }
+
+        .instagram-grid {
+            display: flex;
+            gap: 16px;
+            margin-top: 28px;
+            overflow-x: auto;
+            padding-bottom: 8px;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: thin;
+            scrollbar-color: var(--accent) var(--line);
+        }
+
+        .instagram-grid a {
+            flex: 0 0 min(150px, 40%);
+            overflow: hidden;
+            border-radius: 14px;
+            scroll-snap-align: start;
+        }
+
+        .instagram-grid img {
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+            transition: transform .25s ease;
+        }
+
+        .instagram-grid a:hover img {
+            transform: scale(1.04);
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+            margin: 20px 0 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .certifications {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .certifications a {
+            display: block;
+            transition: transform .2s ease;
+        }
+
+        .certifications a:hover {
+            transform: translateY(-3px);
+        }
+
+        .certifications img {
+            width: 56px;
+            height: 56px;
+            object-fit: contain;
+        }
+
+        .skill-list li {
+            padding: 7px 12px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            color: var(--accent-dark);
+            font-size: .76rem;
+            font-weight: 400;
+        }
+
+        .contact {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 28px;
+            align-items: center;
+            padding: 34px clamp(24px, 5vw, 56px);
+            border-radius: 24px;
+            background: var(--accent-soft);
+        }
+
+        .contact h2 {
+            margin: 4px 0 8px;
+            color: var(--accent-dark);
+            font-family: "Quicksand", "Open Sans", Arial, sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 500;
+            line-height: 1.1;
+        }
+
+        .contact p {
+            margin: 0;
+            color: var(--muted);
+        }
+
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 18px;
+        }
+
+        .contact-links a {
+            display: grid;
+            width: 34px;
+            height: 34px;
+            place-items: center;
+            border: 1px solid #b8b8b8;
+            border-radius: 50%;
+            color: var(--accent-dark);
+            transition: background .2s ease, color .2s ease, border-color .2s ease;
+        }
+
+        .contact-links a:hover {
+            border-color: var(--accent);
+            background: var(--accent);
+            color: var(--paper);
+        }
+
+        .contact-links svg {
+            width: 15px;
+            height: 15px;
+            fill: currentColor;
+        }
+
+        .site-footer {
+            display: flex;
+            justify-content: space-between;
+            gap: 18px;
+            padding-block: 24px;
+            color: var(--muted);
+            font-size: .75rem;
+        }
+
+        .site-footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        @media (max-width: 1000px) {
+            .site-header {
+                flex-wrap: wrap;
+                padding-block: 14px;
+            }
+
+            .header-actions {
+                gap: 20px;
+            }
+
+            .site-nav {
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 800px) {
+            .about-grid,
+            .intro-card {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .quick-facts {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .contact {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                min-height: auto;
+                grid-template-columns: 1fr .8fr;
+                gap: 24px;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .project-card {
+                flex-basis: calc((100% - 20px) / 2);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                width: min(100% - 32px, var(--page-width));
+            }
+
+            .site-header {
+                min-height: 72px;
+                align-items: flex-start;
+                flex-direction: column;
+                justify-content: center;
+                gap: 10px;
+            }
+
+            .header-actions {
+                width: 100%;
+                justify-content: space-between;
+                gap: 12px;
+            }
+
+            .site-nav {
+                gap: 6px 16px;
+            }
+
+            .site-nav a {
+                padding-block: 8px;
+                font-size: .75rem;
+            }
+
+            .a11y-toggle,
+            .contact-links a {
+                width: 44px;
+                height: 44px;
+            }
+
+            .a11y-modal {
+                padding: 20px;
+            }
+
+            .a11y-option {
+                flex-wrap: wrap;
+            }
+
+            .project-links a {
+                padding-block: 10px;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .hero-actions .button {
+                text-align: center;
+            }
+
+            .certifications {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 32px;
+                padding-block: 42px 48px;
+            }
+
+            .hero-visual {
+                grid-row: 1;
+            }
+
+            .hero-portrait {
+                width: min(76%, 330px);
+            }
+
+            .hero h1 {
+                font-size: clamp(3.8rem, 17vw, 5.3rem);
+            }
+
+            .intro-card,
+            .about-grid,
+            .contact {
+                grid-template-columns: 1fr;
+            }
+
+            .intro-card {
+                gap: 24px;
+            }
+
+            .section {
+                padding-block: 54px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-card {
+                flex-basis: 100%;
+            }
+
+            .project-content p {
+                min-height: 0;
+            }
+
+            .contact .button {
+                justify-self: start;
+            }
+
+            .site-footer {
+                flex-direction: column;
+            }
+        }
+
+        .sparkle {
+            position: fixed;
+            z-index: 9999;
+            width: var(--size);
+            height: var(--size);
+            margin: calc(var(--size) / -2) 0 0 calc(var(--size) / -2);
+            background: var(--color);
+            clip-path: polygon(50% 0, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0 50%, 38% 38%);
+            filter: drop-shadow(0 0 4px var(--color)) drop-shadow(0 0 8px rgb(255 200 0 / 75%));
+            pointer-events: none;
+            animation: sparkle-fade .8s ease-out forwards;
+        }
+
+        @keyframes sparkle-fade {
+            from {
+                opacity: 1;
+                transform: translate(0, 0) scale(1) rotate(0);
+            }
+
+            to {
+                opacity: 0;
+                transform: translate(var(--dx), var(--dy)) scale(.2) rotate(120deg);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .sparkle {
+                display: none;
+            }
+        }
+
+        .glow-target {
+            transition: box-shadow .25s ease, filter .25s ease;
+        }
+
+        .glow-target:hover {
+            box-shadow: 0 0 0 1px rgb(255 200 0 / 40%), 0 0 22px rgb(255 200 0 / 50%);
+        }
+
+        .hero-portrait.glow-target:hover,
+        .certifications a.glow-target:hover,
+        .instagram-grid a.glow-target:hover {
+            box-shadow: none;
+            filter: drop-shadow(0 0 12px rgb(255 200 0 / 70%));
+        }
+
+        .site-nav a.glow-target:hover,
+        .brand.glow-target:hover,
+        .project-links a.glow-target:hover,
+        .contact-links a.glow-target:hover {
+            box-shadow: none;
+            text-shadow: 0 0 10px rgb(255 200 0 / 70%);
+        }
+
+        .project-links a.glow-target:hover {
+            box-shadow: 0 0 14px rgb(255 200 0 / 65%);
+            text-shadow: none;
+        }
+
+        .contact-links a.glow-target:hover {
+            box-shadow: 0 0 14px rgb(255 200 0 / 65%);
+            text-shadow: none;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            .projects-grid {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                transition-duration: .01ms !important;
+            }
+        }
+    </style>
 </head>
-
 <body>
-    <!-- Google tradutor -->
-    <div id="google_translate_element" style="position: fixed; top: 0; right: 0; z-index: -1;"></div>
-    <!--/Google tradutor -->
-
-    <nav class="nav justify-content-center">
-        <a class="nav-link active  col-6 col-lg-2" href="#Conteudo" tabindex="1">
-            <small class="badge badge-pill badge-info">1</small> Ir para conteúdo
-        </a>
-        <a class="nav-link  col-6 col-lg-2" href="#Menu" tabindex="2">
-            <small class="badge badge-pill badge-info">2</small> Ir para o menu
-        </a>
-        <a class="nav-link col-6 col-lg-2 " onClick="fonte('d');" tabindex="3">
-            <small class="badge badge-pill badge-info">
-                A-
-            </small>
-            Diminui fonte
-        </a>
-
-        <a class="nav-link col-6 col-lg-2 " onClick="fonte('a');" tabindex="4">
-            <big class="badge badge-pill badge-info">
-                A+
-            </big>
-            Aumenta fonte
-        </a>
-        <a class="nav-link  col-6 col-lg-2" href="#altocontraste" id="altocontraste" onclick="window.toggleContrast()"
-            onkeydown="window.toggleContrast()" accesskey="3"> <small class="badge badge-pill badge-info">
-                <img src="./src/img/auto-contraste.png" alt="" title="">
-            </small>
-            Auto-contrate</a>
-    </nav>
-
-    <header>
-        <div class="container-fluid" id="home">
-            <div class="mobile-display">
-                <h2 class="site-title">
-                    <a href="#">
-                        <!-- <img src="./src/img/marca.jpeg" alt="ALESSANDRA NASTASSJA" class="mb-5"> -->
-                        <h2 class="site-title acessibilidade" style="font-size: 20px; font-weight: bold;">
-                            ALESSANDRA NASTASSJA
-                        </h2>
-                    </a>
-                </h2>
-            </div>
-            <nav>
-                <a href="#" class="toggle-menu" style="color: #fff !important;">&#9776;</a>
-                <ul class="nav-list nav-open" id="nav">
-                    </li>
-                    <li><a href="/#sobremim" class="sobre acessibilidade scroll" id="sobre" tabindex="6">
-                            SOBRE MIM</a>
-                    </li>
-                    <li>
-                        <a href="/#contato" class="acessibilidade scroll" tabindex="8">CONTATO</a>
-                    </li>
-                    <li>
-                        <a href="https://www.linkedin.com/in/alessandra-nastassja/" target="blank" tabindex="10"
-                            class="redes">
-                            <img src="./src/img/redes-sociais/icon-linkedin.png"
-                                alt="ICONE DA REDE SOCIAL LINKEDIN, SENDO UMA IMAGEM COM UM I E UM N DESENHADOS"
-                                title="LINKEDIN">
-                        </a>
-                    </li>
-                    <li class="has-logo"><a href="/" tabindex="9">
-                            <h2 class="site-title acessibilidade">
-                                ALESSANDRA NASTASSJA
-                            </h2>
-                        </a></li>
-                    <li>
-                        <a href="https://www.instagram.com/nast.dev" target="blank" tabindex="10" class="redes">
-                            <img src="./src/img/redes-sociais/icon-instagram.png"
-                                alt="ICONE DA REDE SOCIAL INSTAGRAM, SENDO UMA IMAGEM COM UM I E UM N DESENHADOS"
-                                title="INSTAGRAM">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://medium.com/@alessandranastassja" target="blank" tabindex="13" class="redes">
-                            <img src="./src/img/redes-sociais/icon-medium.png"
-                                alt="ICONE DA REDE SOCIAL MEDIUM, SENDO UMA IMAGEM COM UM M DESENHADOS" title="MEDIUM">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/Alessandra-Nastassja" target="blank" tabindex="14" class="redes">
-                            <img src="./src/img/redes-sociais/icon-git.png"
-                                alt="ICONE DA REDE SOCIAL GIT HUB, SENDO UMA IMAGEM COM UM GATINHO DESENHADOS, SIMBOLO DA MARCA"
-                                title="GIT HUB">
-                        </a>
-                    </li>
-                </ul>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo principal</a>
+    <header class="container site-header">
+        <a class="brand" href="#inicio">ALESSANDRA NASTASSJA</a>
+        <div class="header-actions">
+            <nav class="site-nav" aria-label="Navegação principal">
+                <a href="#servicos">O que faço</a>
+                <a href="#projetos">Projetos</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#contato">Contato</a>
             </nav>
+            <button class="a11y-toggle" id="a11y-open" type="button" aria-haspopup="dialog" aria-label="Abrir opções de acessibilidade" title="Acessibilidade">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4Zm8 6.5-5.5.9v3.3l1.9 7.4a1 1 0 0 1-1.9.5L12.9 15h-1.8l-1.6 5.6a1 1 0 0 1-1.9-.5l1.9-7.4V9.4L4 8.5a1 1 0 1 1 .3-2L12 7.8l7.7-1.3a1 1 0 1 1 .3 2Z"/></svg>
+            </button>
         </div>
     </header>
 
-    <main>
-        <!-- Modal -->
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h3 class="modal-title text-center" id="exampleModalLabel">Ajuda de acessibilidade</h3>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        Este site foi desenvolvido e pensado de forma para atender um público através
-                        da implementação de <strong> recursos de acessibilidade</strong>. <br><br> Com isso, pessoas
-                        com deficiência
-                        visual, mobilidade reduzida, podem navegar no site por intermédio de recursos,
-                        tais como o alto contraste, aumento/diminuição de fonte e navegação por teclado.
-                        <br><br>
-                        <p class="card-text acessibilidade projeto-principal-texto"
-                            style="font-size: 22px; font-family: 'Quicksand', sans-serif;">
-                            Como usar
-                        </p>
-                        Para <b>aumentar</b>, clique em A+. Caso queira voltar no tamanho normal (<b>diminuir</b>),
-                        clique em A-.
-                        Caso queira use o zoom do próprio navegador, usando ctrl + (<b>aumentar</b>) e ctrl -
-                        (<b>diminuir</b>).
-                    </div>
-                </div>
-            </div>
+    <dialog class="a11y-modal" id="a11y-modal" aria-labelledby="a11y-title">
+        <div class="a11y-modal-head">
+            <h2 id="a11y-title">Acessibilidade</h2>
+            <button class="a11y-close" id="a11y-close" type="button" aria-label="Fechar">✕</button>
         </div>
-        <div class="container-fluid topo">
-            <h2 class="text-center font-uppercase acessibilidade" id="Conteudo" tabindex="15">
-                Olá! Eu sou a Ale, trabalho como
-            </h2>
-            <br>
-            <h1 class="text-center font-uppercase acessibilidade" tabindex="16">
-                FRONT-END ENGINEER
-            </h1>
-            <br>
-            <br>
-            <!-- <h3 class="text-center font-uppercase acessibilidade" tabindex="17">
-                Mais conhecida como Preta Dev!
-            </h3> -->
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-12 col-sm-5">
-                    </div>
-                    <div class="col-12 col-sm-0">
-                        <a href="index.html#sobremim" class="scroll" tabindex="8">
-                            <img src="./src/img/seta.gif" alt="seta" width="130px;" class="mx-auto d-block" id="seta">
-                        </a>
-                    </div>
-                    <div class="col-12 col-sm-5">
-                    </div>
+        <div class="a11y-options">
+            <div class="a11y-option">
+                <span>Tamanho do texto</span>
+                <div class="a11y-size">
+                    <button type="button" data-size="-1" aria-label="Diminuir texto">A−</button>
+                    <button type="button" data-size="1" aria-label="Aumentar texto">A+</button>
                 </div>
             </div>
+            <div class="a11y-option"><span>Alto contraste</span><button type="button" data-toggle="contrast" aria-pressed="false">Off</button></div>
+            <div class="a11y-option"><span>Escala de cinza</span><button type="button" data-toggle="grayscale" aria-pressed="false">Off</button></div>
+            <div class="a11y-option"><span>Sublinhar links</span><button type="button" data-toggle="underline" aria-pressed="false">Off</button></div>
+            <div class="a11y-option"><span>Fonte legível</span><button type="button" data-toggle="readable" aria-pressed="false">Off</button></div>
+            <div class="a11y-option"><span>Reduzir animações</span><button type="button" data-toggle="no-motion" aria-pressed="false">Off</button></div>
         </div>
-        <!-- Sobre mim -->
-        <div class="container-fluid main acougano" id="sobremim">
-            <div class="row justify-content-md-center" style="padding: 25px 0px;">
-                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-4">
-                </div>
-                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-4">
-                    <figure style="margin: 0 auto;">
-                        <img class="img-perfil mx-auto d-block" src="src/img/eu.png" alt="Imagem sobre mim"
-                            tabindex="22" title="Alessandra">
-                    </figure>
-                </div>
-                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-4">
-                </div>
-            </div>
-            <p class="text-center font-uppercase acessibilidade portfolio portfolio-1"
-                style="font-family: 'Quicksand', sans-serif !important;" tabindex="19">Hello world!</p>
-            <hr>
-            <p class="text-center acessibilidade portfolio-1" tabindex="20"
-                style="font-family: 'Quicksand', sans-serif !important;">
-                Sou desenvolvedora Front-end com 8 anos de experiência e
-                apaixonada por tecnologia, educação e inclusão. Moro em São Paulo, Brasil.
-            </p>
-            <br>
-        </div>
-        <div class="container-fluid main acougano" id="">
-            <div class="row justify-content-md-center" style="padding: 25px 0px;">
-                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-4">
-                </div>
-                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-4">
-                    <figure style="margin: 0 auto;">
-                        <img class="" src="src/img/sobre-mim.jpeg" alt="Imagem do projeto Açougano." tabindex="22"
-                            title="Avatar" width="100%">
-                    </figure>
-                </div>
-                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-4">
-                </div>
-            </div>
-            <p class="text-center font-uppercase acessibilidade portfolio portfolio-1" tabindex="19">Sobre mim</p>
-            <hr>
-            <p class="text-center acessibilidade portfolio-1" tabindex="20"
-                style="font-family: 'Quicksand', sans-serif !important;">
-                Graduada em Sistemas para Internet pela FATEC. Atualmente, cursando MBA em Engenharia de Software na USP. 
-                <br>
-            </p>
-            <br>
-            <p class="text-center acessibilidade portfolio-1" tabindex="20"
-                style="font-family: 'Quicksand', sans-serif !important;">
+        <p class="a11y-note"><strong>Uso de IA:</strong> ferramentas como GitHub Copilot apoiam o desenvolvimento deste portfólio, sempre com revisão humana e foco em acessibilidade.</p>
+        <button class="a11y-reset" id="a11y-reset" type="button">Restaurar padrão</button>
+    </dialog>
 
-                Veja meu
-                <a href="https://www.linkedin.com/in/alessandra-nastassja/"
-                    target="blank"><strong>Linkedin</strong></a>.
-                Ou faça download do meu
-                <a href="./src/pdf/curriculo-alessandra.pdf" target="blank"><strong>currículo</strong></a>.
-            </p>
-            <br>
-        </div>
-        <div class="container-fluid main acougano" id="sobremim">
-            <div class="row justify-content-md-center" style="padding: 25px 0px;">
-                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-4">
-                </div>
-                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-4">
-                    <figure style="margin: 0 auto;">
-                        <img class="" src="src/img/habilidades.jpeg" alt="Imagem do projeto Açougano." tabindex="22"
-                            title="Avatar" width="100%">
-                    </figure>
-                </div>
-                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-4">
-                </div>
-            </div>
-            <p class="text-center font-uppercase acessibilidade portfolio portfolio-1"
-                style="font-family: 'Quicksand', sans-serif !important;" tabindex="19">
-                Habilidades
-            </p>
-            <hr>
-            <div class="row justify-content-md-center" style="padding: 25px 0px;">
-                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-4">
-                    <p class="text-center acessibilidade m-5 font-weight-bold"
-                        style="font-size: 18px; font-family: 'Quicksand', sans-serif !important;" tabindex="20">
-                        Soft skills
-                    </p>
-                    <ul class="list-group">
-                        <li class="list-group-item m-1" id="fundo-li-habilidades">Comunicação</li>
-                        <li class="list-group-item m-1" id="fundo-li-habilidades">Liderança</li>
-                        <li class="list-group-item m-1" id="fundo-li-habilidades">Trabalho em equipe</li>
-                        <li class="list-group-item m-1" id="fundo-li-habilidades">Resolução de problemas</li>
-                        <li class="list-group-item m-1" id="fundo-li-habilidades">Resiliência</li>
-                    </ul>
-                </div>
-                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-4">
-                    <p class="text-center acessibilidade m-5 font-weight-bold"
-                        style="font-size: 18px; font-family: 'Quicksand', sans-serif !important;" tabindex="20">
-                        Hard skills
-                    </p>
-                    <ul class="list-group">
-                        <li class="list-group-item m-1" id="fundo-li-habilidades">ANGULAR 18+ (NgRx, RxJS, NestJS)</li>
-                        <li class="list-group-item m-1" id="fundo-li-habilidades">HTML5 e CSS3 (SASS)</li>
-                        <li class="list-group-item m-1" id="fundo-li-habilidades">TYPESCRIPT</li>
-                        <li class="list-group-item m-1" id="fundo-li-habilidades">TESTES (Jest, Jasmine e Cypress)</li>
-                        <li class="list-group-item m-1" id="fundo-li-habilidades">GIT (Bitbucket and Git Hub)</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="row justify-content-md-center" style="padding: 25px 0px;">
-                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-4"></div>
-                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-4" style="text-align: center;">
-                    <img class="" src="src/img/azure-fundamentals.png" alt="Logo certificação Azure Fundamentals" tabindex="22"
-                            title="Avatar" width="30%">
-                    <img class="" src="src/img/azure-data-fundamentals.png" alt="Logo Certificação Azure Data Fundamentals" tabindex="22"
-                            title="Avatar" width="30%">
-                    <img class="" src="src/img/github-certificacao.png" alt="Logo Git Hub Copilot" tabindex="22"
-                            title="Avatar" width="30%">
-                </div>
-                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-4"></div>
-            </div>
-            <div class="row justify-content-md-center" style="padding: 25px 0px;">
-                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                    <p class="text-center acessibilidade portfolio-1" tabindex="20"
-                        style="font-family: 'Quicksand', sans-serif !important;">
-                        Certificada pela Microsoft em 
-                        <a href="https://learn.microsoft.com/pt-br/users/38067829/credentials/b78d04754703e1fa"
-                            target="blank"><strong>Azure Fundamentals</strong></a>,
-                        <a href="https://learn.microsoft.com/pt-br/users/38067829/credentials/a0640395c9e8f4d3"
-                            target="blank"><strong>Azure Data Fundamentals</strong></a> e
-                        <a href="https://www.credly.com/badges/5672090b-4c58-4bd0-a5b7-00dd35d29453"
-                            target="blank"><strong>Git Hub Copilot</strong></a>
-                        <br>
-                    </p>
-                </div>
-            </div>
-            <br>
-        </div>
-    </main>
-
-    <section id="trabalhos">
-        <div class="container-fluid main outros-trabalhos" style="background: #fff;">
-            <h3 class="text-center acessibilidade portfolio portfolio-2" tabindex="36">Projetos pessoais</h3>
-            <p class="text-center font-uppercase acessibilidade portfolio portfolio-1" tabindex="37"
-                style="color: #000;">
-                Desenvolvendo
-            </p>
-            <hr>
-            <br>
-            <div class="row justify-content-md-center" style="padding: 15px 0px 0px 0px;">
-                <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-1">
-                </div>
-                <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-5">
-                    <p>
-                        <a class="btn btn-light" data-toggle="collapse" href="#planner" role="button"
-                            aria-expanded="false" aria-controls="collapseExample1">
-                            <img class="card-img-top projeto-principal"
-                                src="./src/img/planner-finance.png"
-                                alt="Imagem do projeto Planner Finance." tabindex="22"
-                                title="Link para o site de planner" width="42%">
-                        </a>
-                    </p>
-                    <div class=" collapse" id="planner">
-                            <div class="card card-body">
-                                <p class="text-center">
-                                    <a href="https://github.com/Alessandra-Nastassja/planner-future" class="mr-2"
-                                        target="_blank">GIT HUB</a>
-                                    |<a href="https://planer-future.netlify.app/home" class="ml-2" target="_blank">VER
-                                        SITE</a>
-                                </p>
-                            </div>
-                </div>
-            </div>
-            <!-- <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-5">
-                <p>
-                    <a class="btn btn-light" data-toggle="collapse" href="#todo" role="button" aria-expanded="false"
-                        aria-controls="collapseExample1">
-                        <img class="card-img-top projeto-principal" src="./src/img/todo.png"
-                            alt="Imagem do projeto Todo." tabindex="22" title="Link para o site de todo">
-                    </a>
+    <main id="conteudo" tabindex="-1">
+        <section class="container hero" id="inicio" aria-labelledby="hero-title">
+            <div class="hero-copy">
+                <p class="eyebrow">Tecnologia com propósito</p>
+                <h1 id="hero-title">Portfólio</h1>
+                <p class="hero-role">Alessandra Nastassja</p>
+                <p class="hero-description">
+                    Desenvolvedora Front-end criando experiências digitais acessíveis,
+                    intuitivas e feitas para pessoas.
                 </p>
-                <div class="collapse" id="todo">
-                    <div class="card card-body">
-                        <p class="text-center"><a href="https://github.com/Alessandra-Nastassja/todo-list" class="mr-2"
-                                target="_blank">GIT HUB</a>
-                            |<a href="https://todolist-ale.netlify.app/" class="ml-2" target="_blank">VER SITE</a></p>
-                    </div>
-                </div>
-            </div> -->
-            <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-1">
-            </div>
-        </div>
-        <div class="row justify-content-md-center" style="padding: 15px 0px 0px 0px;">
-            <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-1">
-            </div>
-            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-5">
-                <p>
-                    <a class="btn btn-light" data-toggle="collapse" href="#agenda" role="button" aria-expanded="false"
-                        aria-controls="collapseExample1">
-                        <img class="card-img-top projeto-principal" src="./src/img/agenda.jpg"
-                            alt="Imagem do projeto Açougano." tabindex="22" title="Link para o site de agenda">
-                    </a>
-                </p>
-                <!-- <div class="collapse" id="agenda">
-                        <div class="card card-body">
-                            <p class="text-center">
-                                <a
-                                    href="https://github.com/Alessandra-Nastassja/ACELERADEV-REACT/tree/master/%235-challenge"
-                                    class="mr-2" target="_blank">GIT HUB</a>
-                                |<a
-                                    href="https://snack.expo.io/@git/github.com/Alessandra-Nastassja/PROJECT-CALCULATOR" class="ml-2"
-                                    target="_blank">VER SITE</a>
-                            </p>
-                        </div>
-                    </div> -->
-            </div>
-            <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-5">
-                <p>
-                    <a class="btn btn-light" data-toggle="collapse" href="#tabela" role="button" aria-expanded="false"
-                        aria-controls="collapseExample">
-                        <img class="card-img-top projeto-principal" src="./src/img/tabela.jpg"
-                            alt="Imagem do projeto Açougano." tabindex="22" title="Link para o site do tabela">
-                    </a>
-                </p>
-                <div class="collapse" id="tabela">
-                    <div class="card card-body">
-                        <p class="text-center">
-                            <a href="https://github.com/Alessandra-Nastassja/PROJECT-TABELA-NUTRICIONAL" class="mr-2"
-                                target="_blank">GIT HUB</a>
-                            <!-- |<a
-                                    href="https://nutri-ale.netlify.app/" class="ml-2"
-                                    target="_blank">VER SITE</a></p> -->
-                    </div>
+                <div class="hero-actions">
+                    <a class="button" href="#projetos">Conheça meus projetos</a>
+                    <a class="button button--outline" href="#contato">Vamos conversar</a>
                 </div>
             </div>
-            <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-1">
-            </div>
-        </div>
-        <div class="row justify-content-md-center" style="padding: 15px 0px 0px 0px;">
-            <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-1">
-
-            </div>
-            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-5">
-                <p>
-                    <a class="btn btn-light" data-toggle="collapse" href="#calculadora" role="button"
-                        aria-expanded="false" aria-controls="collapseExample1">
-                        <img class="card-img-top projeto-principal" src="./src/img/calculadora.jpg"
-                            alt="Imagem do projeto Açougano." tabindex="22" title="Link para app da calculadora">
-                    </a>
-                </p>
-                <div class="collapse" id="calculadora">
-                    <div class="card card-body">
-                        <p class="text-center"><a href="https://github.com/Alessandra-Nastassja/PROJECT-CALCULATOR"
-                                class="mr-2" target="_blank">GIT HUB</a>
-                            |<a href="https://snack.expo.dev/@git/github.com/Alessandra-Nastassja/PROJECT-CALCULATOR"
-                                class="ml-2" target="_blank">VER APLICATIVO</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-5">
-                <p>
-                    <a class="btn btn-light" data-toggle="collapse" href="#instagram" role="button"
-                        aria-expanded="false" aria-controls="collapseExample">
-                        <img class="card-img-top projeto-principal" src="./src/img/instagram.jpg"
-                            alt="Imagem do projeto Açougano." tabindex="22" title="Link para o site do instagram">
-                    </a>
-                </p>
-                <div class="collapse" id="instagram">
-                    <div class="card card-body">
-                        <p class="text-center"><a
-                                href="https://github.com/Alessandra-Nastassja/ACELERADEV-REACT/tree/master/%232-challenge"
-                                class="mr-2" target="_blank">GIT HUB</a>
-                            |<a href="https://alessandra-nastassja.github.io/PROJECT-BLOG/" class="ml-2"
-                                target="_blank">VER SITE</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-1">
-            </div>
-        </div>
-        <div class="row justify-content-md-center" style="padding: 15px 0px 0px 0px;">
-            <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-1">
-
-            </div>
-            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-5">
-                <p>
-                    <a class="btn btn-light" data-toggle="collapse" href="#catalogo" role="button" aria-expanded="false"
-                        aria-controls="collapseExample1">
-                        <img class="card-img-top projeto-principal" src="./src/img/catalogo-filmes.jpg"
-                            alt="Imagem do projeto Açougano." tabindex="22"
-                            title="Link para o site do catalogo de filmes">
-                    </a>
-                </p>
-                <div class="collapse" id="catalogo">
-                    <div class="card card-body">
-                        <p class="text-center"><a
-                                href="https://github.com/Alessandra-Nastassja/ACELERADEV-REACT/tree/master/%231-challenge"
-                                class="mr-2" target="_blank">GIT HUB</a>
-                            <!-- |<a href="https://alessandra-nastassja.github.io/PROJECT-INSULINCAL/" class="ml-2"
-                                    target="_blank">VER SITE</a> -->
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-5">
-                <p>
-                    <a class="btn btn-light" data-toggle="collapse" href="#ecoleta" role="button" aria-expanded="false"
-                        aria-controls="collapseExample">
-                        <img class="card-img-top projeto-principal" src="./src/img/ecoleta.jpg"
-                            alt="Imagem do projeto Açougano." tabindex="22" title="Link para o site do ecoleta">
-                    </a>
-                </p>
-                <div class="collapse" id="ecoleta">
-                    <div class="card card-body">
-                        <p class="text-center"><a href="https://github.com/Alessandra-Nastassja/ecoleta" class="mr-2"
-                                target="_blank">GIT HUB</a>
-                            <!-- |<a
-                                    href="https://alessandra-nastassja.github.io/PROJECT-BLOG/" class="ml-2"
-                                    target="_blank">VER SITE</a> -->
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-1">
-
-            </div>
-        </div>
-        <div class="row justify-content-md-center" style="padding: 15px 0px 0px 0px;">
-            <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-1">
-
-            </div>
-            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-5">
-                <p>
-                    <a class="btn btn-light" data-toggle="collapse" href="#insulincal" role="button"
-                        aria-expanded="false" aria-controls="collapseExample1">
-                        <img class="card-img-top projeto-principal" src="./src/img/insulincal-atual.jpg"
-                            alt="Imagem do projeto Açougano." tabindex="22" title="Link para o site do Insulincal">
-                    </a>
-                </p>
-                <div class="collapse" id="insulincal">
-                    <div class="card card-body">
-                        <p class="text-center"><a href="https://github.com/Alessandra-Nastassja/PROJECT-INSULINCAL"
-                                class="mr-2" target="_blank">GIT HUB</a>
-                            <!-- |<a
-                                    href="https://alessandra-nastassja.github.io/PROJECT-INSULINCAL/" class="ml-2"
-                                    target="_blank">VER SITE</a> -->
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-5">
-                <p>
-                    <a class="btn btn-light" data-toggle="collapse" href="#madison" role="button" aria-expanded="false"
-                        aria-controls="collapseExample">
-                        <img class="card-img-top projeto-principal" src="./src/img/madison-atual.jpg"
-                            alt="Imagem do projeto Açougano." tabindex="22" title="Link para o site do blog">
-                    </a>
-                </p>
-                <div class="collapse" id="madison">
-                    <div class="card card-body">
-                        <p class="text-center"><a href="https://github.com/Alessandra-Nastassja/PROJECT-BLOG"
-                                class="mr-2" target="_blank">GIT HUB</a>
-                            <!-- |<a
-                                    href="https://alessandra-nastassja.github.io/PROJECT-BLOG/" class="ml-2"
-                                    target="_blank">VER SITE</a> -->
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-1">
-
-            </div>
-        </div>
-        <div class="container-fluid main designer mt-5" style="background: #fff">
-            <h3 class="text-center acessibilidade portfolio portfolio-2" tabindex="36">Produzindo contéudo</h3>
-            <br>
-            <p class="text-center font-uppercase acessibilidade portfolio portfolio-1" tabindex="37"
-                style="color: #000;">Digital
-            </p>
-            <hr>
-            <p class="text-center acessibilidade portfolio-1" tabindex="20"
-                style="font-family: 'Quicksand', sans-serif !important;">
-                Além do desenvolvimento, sou criatora de contéudo digital,
-                compartilhando dicas e ensinamentos através do meu canal
-                <a href="https://www.instagram.com/nast.dev" target="blank">
-                    <strong>@nast.dev.</strong>
-                </a>
-            </p>
-            <br>
-            <div class="row justify-content-md-center" style="padding: 25px 0px;">
-                <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 text-center">
-                    <blockquote class="instagram-media"
-                        data-instgrm-permalink="https://www.instagram.com/p/DL3JkjdONMv/" data-instgrm-version="14">
-                    </blockquote>
-                </div>
-                <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 text-center">
-                    <blockquote class="instagram-media"
-                        data-instgrm-permalink="https://www.instagram.com/p/DRLE55yEa-C/" data-instgrm-version="14">
-                    </blockquote>
-                </div>
-                <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 text-center">
-                    <blockquote class="instagram-media"
-                        data-instgrm-permalink="https://www.instagram.com/p/DLQe4TOSqO2/" data-instgrm-version="14">
-                    </blockquote>
-                </div>
-            </div>
-            <br>
-            <p class="text-center font-uppercase acessibilidade portfolio portfolio-1" tabindex="37"
-                style="color: #000;">Artigos técnicos
-            </p>
-            <hr>
-            <div class="row justify-content-md-center" style="padding: 25px 0px;">
-                <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 text-center">
-                    <div class="card">
-                        <a href="https://medium.com/@alessandranastassja/implantando-microfront-end-no-angular-15-usando-module-federation-81791b519845"
-                            target="blank">
-                            <img class="card-img-top"
-                                src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*avP1dir43pjmE-TnXHpRKw.png"
-                                alt="Imagem do cartão de visita da Web designer Alessandra, sendo posto como imagem padrão."
-                                tabindex="40" title="" style="height: 50% !important;">
-                        </a>
-                    </div>
-                    <br>
-                    <a href="https://medium.com/@alessandranastassja/implantando-microfront-end-no-angular-15-usando-module-federation-81791b519845"
-                        target="blank" class="card-text portfolio-1 acessibilidade text-center" tabindex="29"
-                        style="color: #000; font-family: 'Quicksand', sans-serif !important;">
-                        MicroFront-end no Angular 15+ usando Module Federation
-                    </a>
-                    <br>
-                </div>
-                <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 text-center">
-                    <div class="card">
-                        <a href="https://medium.com/@alessandranastassja/minha-primeira-certifica%C3%A7%C3%A3o-microsoft-a24b4ef56a1b"
-                            target="blank">
-                            <img class="card-img-top"
-                                src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*7R04cxPiPuSVmH351B3j5Q.jpeg"
-                                alt="Imagem do cartão de visita da Web designer Alessandra, sendo posto como imagem padrão."
-                                tabindex="39" title="">
-                        </a>
-                    </div>
-                    <br>
-                    <a href="https://medium.com/@alessandranastassja/minha-primeira-certifica%C3%A7%C3%A3o-microsoft-a24b4ef56a1b"
-                        target="blank" class="card-text acessibilidade portfolio-1 text-center " tabindex="29"
-                        style="color: #000; font-family: 'Quicksand', sans-serif !important;">
-                        Minha primeira certificação Microsoft
-                    </a>
-                    <br>
-                </div>
-                <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 text-center">
-                    <div class="card">
-                        <a href="http://bit.ly/escrevendo-gestao-projeto" target="blank">
-                            <img class="card-img-top"
-                                src="https://miro.medium.com/v2/resize:fit:1400/format:webp/0*fYtnAIzOnVbTplEb"
-                                alt="Imagem do cartão de visita da Web designer Alessandra, sendo posto como imagem padrão."
-                                tabindex="39" title="">
-                        </a>
-                    </div>
-                    <br>
-                    <a href="http://bit.ly/escrevendo-gestao-projeto" target="blank"
-                        class="card-text acessibilidade portfolio-1 text-center " tabindex="29"
-                        style="color: #000; font-family: 'Quicksand', sans-serif !important;">
-                        Gestão de projetos — PMBok
-                    </a>
-                    <br>
-                </div>
-            </div>
-            <br>
-            <p class="text-center font-uppercase acessibilidade portfolio portfolio-1" tabindex="37"
-                style="color: #000;">Apresentações</p>
-            <hr>
-            <div class="row justify-content-md-center" style="padding: 25px 0px;">
-                <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-4">
-                    <div class="card">
-                        <a href="https://speakerdeck.com/alessandranastassja/imersao-tech-fundamentos-do-angular"
-                            target="blank">
-                            <img class="card-img-top" src="./src/img/imersao-tech.png" alt="" tabindex="39"
-                                title="">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-md-center" style="padding: 25px 0px;">
-                <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-4">
-                    <div class="card">
-                        <a href="https://speakerdeck.com/alessandranastassja/carreira-em-tecnologia-sem-filtros"
-                            target="blank">
-                            <img class="card-img-top" src="./src/img/carreira-em-tecnologia.png" alt="" tabindex="39"
-                                title="">
-                        </a>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-4">
-                    <div class="card">
-                        <a href="https://speakerdeck.com/alessandranastassja/javascipt-um-caminho-para-o-futuro"
-                            target="blank">
-                            <img class="card-img-top" src="./src/img/BIT-Tech-Week.jpg"
-                                alt="Imagem do cartão de visita da Web designer Alessandra, sendo posto como imagem padrão."
-                                tabindex="39" title="">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-md-center" style="padding: 25px 0px;">
-
-                <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-4">
-                    <div class="card">
-                        <a href="https://speakerdeck.com/alessandranastassja/javascript-avancado" target="blank">
-                            <img class="card-img-top" src="./src/img/javascript-avacando.png"
-                                alt="Imagem do cartão de visita da Web designer Alessandra, sendo posto como imagem padrão."
-                                tabindex="39" title="">
-                        </a>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-4">
-                    <div class="card">
-                        <a href="https://speakerdeck.com/alessandranastassja/servidor-de-aplicacao-nginx"
-                            target="blank">
-                            <img class="card-img-top" src="./src/img/servidor-aplicacao.png"
-                                alt="Imagem do cartão de visita da Web designer Alessandra, sendo posto como imagem padrão."
-                                tabindex="39" title="">
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid main voluntariado">
-            <h3 class="text-center acessibilidade portfolio portfolio-2" tabindex="42">Trabalhos voluntários</h3>
-            <p class="text-center font-uppercase acessibilidade portfolio portfolio-1" tabindex="43"
-                style="color: #000;">
-                Interação com a comunidade tech
-            </p>
-            <hr>
-            <div class="row justify-content-md-center" style="padding: 25px 0px;">
-                <div class="col-12 col-sm-4 col-md-3">
-                    <div class="card" style="border: none;">
-                        <img 
-                            class="mx-auto d-block" 
-                            src="./src/img/voluntariado-tdc.jpeg"
-                            alt="Organização de brindes no TDC de 2019" 
-                            title="Organização de brindes no TDC de 2019" 
-                            width="210px !important">
-                    </div>
-                </div>
-                <br>
-                 <div class="col-12 col-sm-4 col-md-3">
-                    <div class="card" style="border: none;">
-                        <img 
-                            class="mx-auto d-block" 
-                            src="./src/img/voluntariado-fiap.jpeg"
-                            alt="Auxilixar de sala no worskop de Agentes de IA (2025)" 
-                            title="Auxilixar de sala no worskop de Agentes de IA (2025)"
-                            width="273px !important">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="container-fluid main ferramentas">
-            <h3 class="text-center acessibilidade portfolio portfolio-2" tabindex="42">PLATAFORMAS E FERRAMENTAS</h3>
-            <p class="text-center font-uppercase acessibilidade portfolio portfolio-1" tabindex="43"
-                style="color: #000;">
-                Desenvolvendo com qualidade
-            </p>
-            <hr>
-            <div class="row justify-content-md-center" style="padding: 25px 0px;">
-                <div class="col-12 col-sm-4 col-md-3">
-                    <div class="card" style="border: none;">
-                        <img class="mx-auto d-block card-img-top" src="./src/img/ferramentas/google-analytics.png"
-                            alt="Logotipo do Google Analytics" title="Logotipo do Google Analytics">
-                    </div>
-                </div>
-                <div class="col-12 col-sm-4 col-md-3">
-                    <div class="card" style="border: none;">
-                        <img class="mx-auto d-block card-img-top" src="./src/img/ferramentas/google-adwords.png"
-                            alt="Logotipo do Google Adwords" title="Logotipo do Google Adwords">
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-md-center" style="padding: 25px 0px;">
-                <div class="col-12 col-sm-4 col-md-3">
-                    <div class="card" style="border: none;">
-                        <img class="mx-auto d-block card-img-top" src="./src/img/ferramentas/html.png"
-                            alt="Logotipo do HTML5" tabindex="48" title="Logotipo do HTML5">
-                    </div>
-                </div>
-                <div class="col-12 col-sm-4 col-md-3">
-                    <div class="card" style="border: none;">
-                        <img class="mx-auto d-block card-img-top" src="./src/img/ferramentas/css.png"
-                            alt="Logotipo do CSS3" tabindex="49" title="Logotipo do CSS3">
-                    </div>
-                </div>
-                <div class="col-12 col-sm-4 col-md-3">
-                    <div class="card" style="border: none;">
-                        <img id="teste" class="mx-auto d-block card-img-top" src="./src/img/ferramentas/angular.png"
-                            alt="Logotipo do Angular" tabindex="50" title="Logotipo do Angular">
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-md-center" style="padding: 25px 0px;">
-                <!-- <div class="col-12 col-sm-4 col-md-3">
-                    <div class="card" style="border: none;">
-                        <img class="mx-auto d-block card-img-top" src="./src/img/ferramentas/materialize.png"
-                            alt="Logotipo do Materialize" tabindex="51" title="Logotipo do Materialize">
-                    </div>
-                </div> -->
-                <div class="col-12 col-sm-4 col-md-3">
-                    <div class="card" style="border: none;">
-                        <img class="mx-auto d-block card-img-top" src="./src/img/ferramentas/git.png"
-                            alt="Logotipo do Git Hub" tabindex="52" title="Logotipo do Git Hub">
-                    </div>
-                </div>
-                <div class="col-12 col-sm-4 col-md-3">
-                    <div class="card" style="border: none;">
-                        <img class="mx-auto d-block card-img-top" src="./src/img/ferramentas/node-js.png"
-                            alt="Logotipo do Node Js" tabindex="54" title="Logotipo do Node JS">
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-md-center" style="padding: 25px 0px;">
-                <!-- <div class="col-12 col-sm-4 col-md-3">
-                    <div class="card" style="border: none;">
-                        <img class="mx-auto d-block card-img-top" src="./src/img/ferramentas/node-js.png"
-                            alt="Logotipo do Node Js" tabindex="54" title="Logotipo do Node JS">
-                    </div>
-                </div> -->
-                <!-- <div class="col-12 col-sm-4 col-md-3">
-                    <div class="card" style="border: none;">
-                        <img class="mx-auto d-block card-img-top" src="./src/img/ferramentas/php.png"
-                            alt="Logotipo do PHP" tabindex="55" title="Logotipo do PHP">
-                    </div>
-                </div> -->
-                <!-- <div class="col-12 col-sm-4 col-md-3">
-                    <div class="card" style="border: none;">
-                        <img class="mx-auto d-block card-img-top" src="./src/img/ferramentas/mysql.png"
-                            alt="Logotipo do Mysql" tabindex="56" title="Logotipo do Mysql">
-                    </div>
-                </div> -->
-            </div>
-            <div class="row justify-content-md-center" style="padding: 25px 0px;">
-                <div class="col-12 col-sm-4 col-md-3">
-                    <div class="card" style="border: none;">
-                        <img class="mx-auto d-block card-img-top" src="./src/img/ferramentas/react.png"
-                            alt="Logotipo do React" tabindex="54" title="Logotipo do React">
-                    </div>
-                </div>
-                <!-- <div class="col-12 col-sm-4 col-md-3">
-                    <div class="card" style="border: none;">
-                        <img class="mx-auto d-block card-img-top" src="./src/img/ferramentas/mongo.png"
-                            alt="Logotipo do Mongo" tabindex="55" title="Logotipo do Mongo">
-                    </div>
-                </div> -->
-                <!-- <div class="col-12 col-sm-4 col-md-3">
-                    <div class="card" style="border: none;">
-                        <img class="mx-auto d-block card-img-top" src="./src/img/ferramentas/jquery.png"
-                            alt="Logotipo do Jquery" tabindex="56" title="Logotipo do Jquery">
-                    </div>
-                </div> -->
-            </div>
-            <!-- <div class="row justify-content-md-center" style="padding: 25px 0px;">
-                <div class="col-12 col-sm-4 col-md-3">
-                    <div class="card" style="border: none;">
-                        <img class="mx-auto d-block card-img-top" src="./src/img/ferramentas/photoshop.png"
-                            alt="Logotipo do Photoshop" tabindex="54" title="Logotipo do Photoshop">
-                    </div>
-                </div>
-                <div class="col-12 col-sm-4 col-md-3">
-                    <div class="card" style="border: none;">
-                        <img class="card-img-top" src="./src/img/ferramentas/illustrator.png"
-                            alt="Logotipo do Illustrator" tabindex="55" title="Logotipo do Illustrator">
-                    </div>
-                </div>
-                <div class="col-12 col-sm-4 col-md-3">
-                    <div class="card" style="border: none;">
-                        <img class="card-img-top" src="./src/img/ferramentas/dreamweaver.png"
-                            alt="Logotipo do Dreamweaver" tabindex="56" title="Logotipo do Dreamweaver">
-                    </div>
-                </div>
-            </div> -->
-        </div>
-    </section>
-    <footer>
-        <div class="container-fluid rodape" style="background: #fff;">
-            <p class="text-center acessibilidade portfolio portfolio-2" tabindex="57"
-                style="letter-spacing: 0px !important;">
-                <a href="/#home" class="sobre acessibilidade scroll" tabindex="58">Ínicio</a> /
-                <a href="/#sobremim" class="acessibilidade scroll" tabindex="59">Sobre mim</a> /
-                <a href="/#trabalhos" class="acessibilidade scroll" tabindex="60">Portfólio</a> /
-                <a id="contato" tabindex="61">Contato</a>
-            </p>
-            <p class="text-center acessibilidade portfolio" style="padding: 25px ; letter-spacing: 5px; color: #000"
-                tabindex="62">Entre em contato</p>
-
-            <address>
-                <p class="text-center acessibilidade endereco" tabindex="63">
-                    <a href="mailto:alessandra.nastassja@hotmail.com"
-                        style="color: #000 !important;"><u>alessandra.nastassja@hotmail.com</u></a>
-                </p>
-                <br>
-            </address>
-            <br>
-            <ul class="nav justify-content-center">
-                <li class="nav-item">
-                    <a href="https://www.linkedin.com/in/alessandra-nastassja/" target="blank" tabindex="65"
-                        class="nav-link">
-                        <img src="./src/img/redes-sociais/icon-linkedin.png"
-                            alt="ICONE DA REDE SOCIAL LINKEDIN, SENDO UMA IMAGEM COM UM I E UM N DESENHADOS"
-                            title="LINKEDIN">
+            <div class="hero-visual">
+                <figure class="hero-portrait">
+                    <img src="./src/img/eu.png" alt="Alessandra Nastassja">
+                </figure>
+            <ul class="certifications" aria-label="Certificações">
+                <li>
+                    <a href="https://learn.microsoft.com/pt-br/users/38067829/credentials/b78d04754703e1fa" target="_blank" rel="noopener noreferrer" title="Microsoft Azure Fundamentals">
+                        <img src="./src/img/azure-fundamentals.png" alt="Certificação Microsoft Azure Fundamentals" loading="lazy">
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a href="https://www.instagram.com/nast.dev" target="blank" tabindex="66" class="nav-link">
-                        <img src="./src/img/redes-sociais/icon-instagram.png"
-                            alt="ICONE DA REDE SOCIAL INSTAGRAM, SENDO UMA IMAGEM COM F DESENHADO" title="INSTAGRAM">
+                <li>
+                    <a href="https://learn.microsoft.com/pt-br/users/38067829/credentials/a0640395c9e8f4d3" target="_blank" rel="noopener noreferrer" title="Microsoft Azure Data Fundamentals">
+                        <img src="./src/img/azure-data-fundamentals.png" alt="Certificação Microsoft Azure Data Fundamentals" loading="lazy">
                     </a>
                 </li>
-                <!-- <li class="nav-item">
-                    <a href="https://twitter.com/hey_nastassja" target="blank" tabindex="67" class="nav-link">
-                        <img src="./src/img/redes-sociais/icon-twitter.png"
-                            alt="ICONE DA REDE SOCIAL TWITTER, SENDO UMA IMAGEM COM UM T DESENHADOS" title="TWITTER">
-                    </a>
-                </li> -->
-                <li class="nav-item">
-                    <a href="https://medium.com/@alessandranastassja" target="blank" tabindex="68" class="nav-link">
-                        <img src="./src/img/redes-sociais/icon-medium.png"
-                            alt="ICONE DA REDE SOCIAL MEDIUM, SENDO UMA IMAGEM COM UM M DESENHADOS" title="MEDIUM">
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="https://github.com/Alessandra-Nastassja" target="blank" tabindex="69" class="nav-link">
-                        <img src="./src/img/redes-sociais/icon-git.png"
-                            alt="ICONE DA REDE SOCIAL GIT HUB, SENDO UMA IMAGEM COM UM GATINHO DESENHADOS, SIMBOLO DA MARCA"
-                            title="GIT HUB">
+                <li>
+                    <a href="https://www.credly.com/badges/5672090b-4c58-4bd0-a5b7-00dd35d29453" target="_blank" rel="noopener noreferrer" title="GitHub Copilot">
+                        <img src="./src/img/github-certificacao.png" alt="Certificação GitHub Copilot" loading="lazy">
                     </a>
                 </li>
             </ul>
-        </div>
-        <p class="text-center acessibilidade copyright">Copyright © 2026 | Front-end Alessandra Nastassja - Todos os
-            direitos reservados.</p>
+            </div>
+        </section>
 
+        <section class="container intro-card" aria-labelledby="intro-title">
+            <div>
+                <h2 id="intro-title">Olá, mundo!</h2>
+                <p>
+                    Sou desenvolvedora Front-end com 8 anos de experiência e apaixonada
+                    por tecnologia, educação e inclusão. Moro em São Paulo, Brasil.
+                </p>
+            </div>
+            <div class="quick-facts" role="group" aria-label="Resumo profissional">
+                <div><strong>8 anos</strong><span>de experiência</span></div>
+                <div><strong>São Paulo</strong><span>Brasil</span></div>
+                <div><strong>Front-end</strong><span>desenvolvimento web</span></div>
+                <div><strong>Acessibilidade</strong><span>no centro das soluções</span></div>
+                <div class="quick-fact--wide"><strong>IA no desenvolvimento</strong><span>GitHub Copilot com revisão humana</span></div>
+            </div>
+        </section>
+
+        <section class="container section" id="servicos" aria-labelledby="services-title">
+            <div class="section-heading">
+                <p class="section-label">Como posso ajudar</p>
+                <h2 id="services-title">O que eu faço</h2>
+            </div>
+            <div class="services-grid">
+                <article class="service">
+                    <span class="service-icon" aria-hidden="true">&lt;/&gt;</span>
+                    <h3>Desenvolvimento Front-end</h3>
+                    <p>Interfaces web responsivas, organizadas e fáceis de usar.</p>
+                </article>
+                <article class="service">
+                    <span class="service-icon" aria-hidden="true">◎</span>
+                    <h3>Experiência do usuário</h3>
+                    <p>Fluxos claros e experiências pensadas para diferentes pessoas.</p>
+                </article>
+                <article class="service">
+                    <span class="service-icon" aria-hidden="true">✦</span>
+                    <h3>IA no desenvolvimento</h3>
+                    <p>Uso de IA para ganhar produtividade, com revisão humana e foco em acessibilidade.</p>
+                </article>
+                <article class="service">
+                    <span class="service-icon" aria-hidden="true">◇</span>
+                    <h3>Acessibilidade</h3>
+                    <p>Conteúdo e interfaces mais inclusivos, com atenção à navegação.</p>
+                </article>
+                <article class="service">
+                    <span class="service-icon" aria-hidden="true">✳</span>
+                    <h3>Qualidade de software</h3>
+                    <p>Boas práticas, testes e cuidado em cada etapa do desenvolvimento.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="projects" id="projetos" aria-labelledby="projects-title">
+            <div class="container section">
+                <div class="section-heading">
+                    <p class="section-label">Trabalhos selecionados</p>
+                    <h2 id="projects-title">Projetos em destaque</h2>
+                </div>
+                <div class="projects-viewport" id="projects-viewport" role="region" aria-label="Carrossel de projetos" aria-roledescription="carrossel" tabindex="0">
+                  <div class="projects-grid" id="projects-track">
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="./src/img/planner-finance.png" alt="Tela do Planner Finance" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <span class="project-number">01 / FINANÇAS</span>
+                            <h3>Planner Finance</h3>
+                            <p>Uma ferramenta para organizar o planejamento financeiro pessoal.</p>
+                            <ul class="project-tech" aria-label="Tecnologias usadas"><li>Angular</li><li>TypeScript</li><li>RxJS</li><li>SCSS</li></ul>
+                            <div class="project-links">
+                                <a href="https://planer-future.netlify.app/home" target="_blank" rel="noopener noreferrer">Ver projeto</a>
+                                <a href="https://github.com/Alessandra-Nastassja/planner-future" target="_blank" rel="noopener noreferrer">GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="./src/img/ecoleta.jpg" alt="Tela do projeto Ecoleta" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <span class="project-number">02 / IMPACTO</span>
+                            <h3>Ecoleta</h3>
+                            <p>Projeto para conectar pessoas a pontos de coleta de resíduos.</p>
+                            <ul class="project-tech" aria-label="Tecnologias usadas"><li>TypeScript</li><li>Node.js</li><li>Express</li><li>React</li></ul>
+                            <div class="project-links">
+                                <a href="https://github.com/Alessandra-Nastassja/ecoleta" target="_blank" rel="noopener noreferrer">GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="./src/img/calculadora.jpg" alt="Tela do projeto Calculadora" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <span class="project-number">03 / APLICATIVO</span>
+                            <h3>Calculadora</h3>
+                            <p>Aplicativo de calculadora desenvolvido como projeto mobile.</p>
+                            <ul class="project-tech" aria-label="Tecnologias usadas"><li>React Native</li><li>Expo</li><li>JavaScript</li></ul>
+                            <div class="project-links">
+                                <a href="https://snack.expo.dev/@git/github.com/Alessandra-Nastassja/PROJECT-CALCULATOR" target="_blank" rel="noopener noreferrer">Ver aplicativo</a>
+                                <a href="https://github.com/Alessandra-Nastassja/PROJECT-CALCULATOR" target="_blank" rel="noopener noreferrer">GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="./src/img/tabela.jpg" alt="Tela do projeto Tabela Nutricional" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <span class="project-number">04 / SAÚDE</span>
+                            <h3>Tabela Nutricional</h3>
+                            <p>Projeto para consultar informações nutricionais de alimentos.</p>
+                            <ul class="project-tech" aria-label="Tecnologias usadas"><li>Angular</li><li>TypeScript</li><li>Firebase</li><li>SCSS</li></ul>
+                            <div class="project-links">
+                                <a href="https://github.com/Alessandra-Nastassja/PROJECT-TABELA-NUTRICIONAL" target="_blank" rel="noopener noreferrer">GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="./src/img/instagram.jpg" alt="Tela do projeto inspirado no Instagram" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <span class="project-number">05 / INTERFACE</span>
+                            <h3>Interface Instagram</h3>
+                            <p>Recriação de interface social desenvolvida durante um desafio front-end.</p>
+                            <ul class="project-tech" aria-label="Tecnologias usadas"><li>React</li><li>HTML</li><li>CSS</li></ul>
+                            <div class="project-links">
+                                <a href="https://alessandra-nastassja.github.io/PROJECT-BLOG/" target="_blank" rel="noopener noreferrer">Ver projeto</a>
+                                <a href="https://github.com/Alessandra-Nastassja/ACELERADEV-REACT/tree/master/%232-challenge" target="_blank" rel="noopener noreferrer">GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="./src/img/catalogo-filmes.jpg" alt="Tela do catálogo de filmes" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <span class="project-number">06 / CATÁLOGO</span>
+                            <h3>Catálogo de filmes</h3>
+                            <p>Projeto de interface para explorar e organizar títulos de filmes.</p>
+                            <ul class="project-tech" aria-label="Tecnologias usadas"><li>React</li><li>HTML</li><li>CSS</li></ul>
+                            <div class="project-links">
+                                <a href="https://github.com/Alessandra-Nastassja/ACELERADEV-REACT/tree/master/%231-challenge" target="_blank" rel="noopener noreferrer">GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="./src/img/insulincal-atual.jpg" alt="Tela do projeto Insulincal" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <span class="project-number">07 / SAÚDE</span>
+                            <h3>Insulincal</h3>
+                            <p>Aplicação de apoio ao cálculo de insulina para o dia a dia.</p>
+                            <ul class="project-tech" aria-label="Tecnologias usadas"><li>HTML</li><li>CSS</li><li>PHP</li></ul>
+                            <div class="project-links">
+                                <a href="https://github.com/Alessandra-Nastassja/PROJECT-INSULINCAL" target="_blank" rel="noopener noreferrer">GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="./src/img/madison-atual.jpg" alt="Tela do projeto Madison Blog" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <span class="project-number">08 / CONTEÚDO</span>
+                            <h3>Madison Blog</h3>
+                            <p>Projeto de blog com foco em apresentação e leitura de conteúdo.</p>
+                            <ul class="project-tech" aria-label="Tecnologias usadas"><li>HTML5</li><li>CSS</li><li>JavaScript</li></ul>
+                            <div class="project-links">
+                                <a href="https://github.com/Alessandra-Nastassja/PROJECT-BLOG" target="_blank" rel="noopener noreferrer">GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="./src/img/todo.png" alt="Tela do projeto Todo List" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <span class="project-number">09 / PRODUTIVIDADE</span>
+                            <h3>Todo List</h3>
+                            <p>Lista de tarefas para organizar atividades e acompanhar o progresso.</p>
+                            <ul class="project-tech" aria-label="Tecnologias usadas"><li>React</li><li>TypeScript</li><li>Vite</li></ul>
+                            <div class="project-links">
+                                <a href="https://todolist-ale.netlify.app/" target="_blank" rel="noopener noreferrer">Ver projeto</a>
+                                <a href="https://github.com/Alessandra-Nastassja/todo-list" target="_blank" rel="noopener noreferrer">GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+                  </div>
+                </div>
+                <div class="projects-controls" role="group" aria-label="Controles do carrossel">
+                    <button type="button" id="projects-previous" aria-label="Mostrar projeto anterior">&#8592;</button>
+                    <button type="button" id="projects-next" aria-label="Mostrar próximo projeto">&#8594;</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="container section about-grid" id="sobre" aria-labelledby="about-title">
+            <div>
+                <div class="section-heading">
+                    <p class="section-label">Um pouco sobre mim</p>
+                    <h2 id="about-title">Tecnologia feita por pessoas, para pessoas.</h2>
+                </div>
+                <div class="about-copy">
+                    <p>
+                        Sou graduada em Sistemas para Internet pela FATEC e atualmente
+                        curso <strong>MBA em Engenharia de Software</strong> na USP.
+                    </p>
+                    <p>
+                        Gosto de unir desenvolvimento, educação e inclusão para criar
+                        experiências digitais acessíveis e acolhedoras. Acompanhe esse trabalho no
+                        <a class="text-link" href="https://www.instagram.com/nast.dev" target="_blank" rel="noopener noreferrer">@nast.dev</a>.
+                    </p>
+                    <div class="instagram-grid" role="group" aria-label="Conteúdos do Instagram @nast.dev">
+                        <a href="https://www.instagram.com/p/DL3JkjdONMv/" target="_blank" rel="noopener noreferrer"><img src="./src/img/nast-dev-1.jpg" alt="Post 1 de 3 do perfil @nast.dev no Instagram (abre em nova aba)" loading="lazy"></a>
+                        <a href="https://www.instagram.com/p/DRLE55yEa-C/" target="_blank" rel="noopener noreferrer"><img src="./src/img/nast-dev-2.jpg" alt="Post 2 de 3 do perfil @nast.dev no Instagram (abre em nova aba)" loading="lazy"></a>
+                        <a href="https://www.instagram.com/p/DLQe4TOSqO2/" target="_blank" rel="noopener noreferrer"><img src="./src/img/nast-dev-3.jpg" alt="Post 3 de 3 do perfil @nast.dev no Instagram (abre em nova aba)" loading="lazy"></a>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="section-heading">
+                    <p class="section-label">Ferramentas do dia a dia</p>
+                    <h2>Habilidades</h2>
+                </div>
+                <ul class="skill-list" aria-label="Tecnologias e habilidades">
+                    <li>Angular</li>
+                    <li>React</li>
+                    <li>Next.js</li>
+                    <li>TypeScript</li>
+                    <li>JavaScript</li>
+                    <li>HTML5</li>
+                    <li>CSS3 / Sass</li>
+                    <li>RxJS</li>
+                    <li>Jest</li>
+                    <li>Cypress / Playwright</li>
+                    <li>Git / GitHub</li>
+                    <li>Azure / AWS</li>
+                    <li>GitHub Copilot</li>
+                </ul>
+            </div>
+        </section>
+
+
+
+
+
+        <section class="container contact" id="contato" aria-labelledby="contact-title">
+            <div>
+                <p class="section-label">Tem um projeto em mente?</p>
+                <h2 id="contact-title">Vamos criar algo incrível.</h2>
+                <p>Entre em contato e me conte o que você está imaginando.</p>
+                <div class="contact-links" role="group" aria-label="Redes sociais">
+                    <a href="https://www.linkedin.com/in/alessandra-nastassja/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4V21H3V9.75Zm6.5 0h3.84v1.54h.06c.53-1 1.84-2.08 3.79-2.08 4.05 0 4.8 2.67 4.8 6.13V21h-4v-4.9c0-1.17-.02-2.67-1.63-2.67-1.63 0-1.88 1.27-1.88 2.58V21h-4V9.75Z"/></svg>
+                    </a>
+                    <a href="https://medium.com/@alessandranastassja" target="_blank" rel="noopener noreferrer" aria-label="Medium" title="Medium">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.54 12a6.8 6.8 0 1 1-6.77-6.82A6.74 6.74 0 0 1 13.54 12Zm7.42 0c0 3.54-1.51 6.42-3.38 6.42S14.2 15.54 14.2 12s1.51-6.42 3.38-6.42 3.38 2.88 3.38 6.42Zm2.04 0c0 3.17-.53 5.75-1.19 5.75s-1.19-2.58-1.19-5.75.53-5.75 1.19-5.75S23 8.83 23 12Z"/></svg>
+                    </a>
+                    <a href="https://www.instagram.com/nast.dev" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.25-3.25a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z"/></svg>
+                    </a>
+                    <a href="https://github.com/Alessandra-Nastassja" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5A11.5 11.5 0 0 0 8.36 22.9c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg>
+                    </a>
+                </div>
+            </div>
+            <a class="button" href="mailto:alessandra.nastassja@hotmail.com">Fale comigo</a>
+        </section>
+    </main>
+
+    <footer class="container site-footer">
+        <span>© 2026 Alessandra Nastassja. Todos os direitos reservados.</span>
+        <a href="#inicio">Voltar ao topo ↑</a>
     </footer>
+    <script>
+        (() => {
+            const setupCarousel = (prefix) => {
+                const viewport = document.querySelector(`#${prefix}-viewport`);
+                const track = document.querySelector(`#${prefix}-track`);
+                const previousButton = document.querySelector(`#${prefix}-previous`);
+                const nextButton = document.querySelector(`#${prefix}-next`);
+                const cards = Array.from(track.querySelectorAll(".project-card"));
+
+                const updateControls = () => {
+                    const maxScroll = viewport.scrollWidth - viewport.clientWidth;
+
+                    previousButton.disabled = viewport.scrollLeft <= 1;
+                    nextButton.disabled = viewport.scrollLeft >= maxScroll - 1;
+                };
+
+                const moveCarousel = (direction) => {
+                    const gap = parseFloat(getComputedStyle(track).gap);
+                    const distance = cards[0].offsetWidth + gap;
+                    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+                    viewport.scrollBy({ left: direction * distance, behavior: reducedMotion ? "auto" : "smooth" });
+                };
+
+                previousButton.addEventListener("click", () => moveCarousel(-1));
+                nextButton.addEventListener("click", () => moveCarousel(1));
+                viewport.addEventListener("scroll", updateControls, { passive: true });
+                window.addEventListener("resize", updateControls);
+                updateControls();
+            };
+
+            setupCarousel("projects");
+        })();
+    </script>
+    <script>
+        (() => {
+            document.querySelectorAll(".project-card").forEach((card) => {
+                const title = card.querySelector("h3")?.textContent.trim();
+                card.querySelectorAll(".project-links a").forEach((link) => {
+                    link.setAttribute("aria-label", `${link.textContent.trim()} ${title}`);
+                });
+            });
+
+            document.querySelectorAll('a[target="_blank"]').forEach((link) => {
+                const hint = document.createElement("span");
+                hint.className = "sr-only";
+                hint.textContent = " (abre em nova aba)";
+                link.append(hint);
+                if (link.hasAttribute("aria-label")) {
+                    link.setAttribute("aria-label", `${link.getAttribute("aria-label")} (abre em nova aba)`);
+                }
+            });
+
+            document.querySelectorAll("#a11y-modal [data-toggle]").forEach((button) => {
+                const label = button.closest(".a11y-option").querySelector("span").textContent;
+                button.setAttribute("aria-label", label);
+            });
+
+            const main = document.getElementById("conteudo");
+            document.querySelector(".skip-link").addEventListener("click", () => main.focus());
+        })();
+    </script>
+    <script>
+        (() => {
+            const root = document.documentElement;
+            const modal = document.getElementById("a11y-modal");
+            const toggles = modal.querySelectorAll("[data-toggle]");
+            const sizes = [100, 112, 125, 140];
+            const storageKey = "portfolio-a11y";
+            let state = { size: 0, flags: [] };
+
+            try {
+                state = { ...state, ...JSON.parse(localStorage.getItem(storageKey)) };
+            } catch (error) { /* usa o padrão */ }
+
+            const apply = () => {
+                root.style.fontSize = `${sizes[state.size]}%`;
+                toggles.forEach((button) => {
+                    const on = state.flags.includes(button.dataset.toggle);
+                    root.classList.toggle(`a11y-${button.dataset.toggle}`, on);
+                    button.setAttribute("aria-pressed", String(on));
+                    button.textContent = on ? "On" : "Off";
+                });
+                try {
+                    localStorage.setItem(storageKey, JSON.stringify(state));
+                } catch (error) { /* ignora */ }
+            };
+
+            document.getElementById("a11y-open").addEventListener("click", () => modal.showModal());
+            document.getElementById("a11y-close").addEventListener("click", () => modal.close());
+            modal.addEventListener("click", (event) => {
+                if (event.target === modal) modal.close();
+            });
+
+            modal.querySelectorAll("[data-size]").forEach((button) => {
+                button.addEventListener("click", () => {
+                    state.size = Math.min(sizes.length - 1, Math.max(0, state.size + Number(button.dataset.size)));
+                    apply();
+                });
+            });
+
+            toggles.forEach((button) => {
+                button.addEventListener("click", () => {
+                    const name = button.dataset.toggle;
+                    state.flags = state.flags.includes(name)
+                        ? state.flags.filter((flag) => flag !== name)
+                        : [...state.flags, name];
+                    apply();
+                });
+            });
+
+            document.getElementById("a11y-reset").addEventListener("click", () => {
+                state = { size: 0, flags: [] };
+                apply();
+            });
+
+            apply();
+        })();
+    </script>
+    <script>
+        (() => {
+            const canHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+            const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+            document.querySelectorAll(
+                ".brand, .site-nav a, .button, .hero-portrait, .certifications a, .instagram-grid a, .project-links a, .skill-list li, .projects-controls button, .contact-links a"
+            ).forEach((element) => element.classList.add("glow-target"));
+
+            if (!canHover || reducedMotion) return;
+
+            const sparklesAllowed = () => !document.documentElement.classList.contains("a11y-no-motion");
+
+            const colors = ["#ffd400", "#ffe14d", "#ffc107", "#fff3a0"];
+            let lastX = 0;
+            let lastY = 0;
+            let lastTime = 0;
+
+            const createSparkle = (x, y) => {
+                const sparkle = document.createElement("span");
+                const angle = Math.random() * Math.PI * 2;
+                const distance = 14 + Math.random() * 22;
+
+                sparkle.className = "sparkle";
+                sparkle.setAttribute("aria-hidden", "true");
+                sparkle.style.left = `${x}px`;
+                sparkle.style.top = `${y}px`;
+                sparkle.style.setProperty("--size", `${8 + Math.random() * 10}px`);
+                sparkle.style.setProperty("--color", colors[Math.floor(Math.random() * colors.length)]);
+                sparkle.style.setProperty("--dx", `${Math.cos(angle) * distance}px`);
+                sparkle.style.setProperty("--dy", `${Math.sin(angle) * distance + 10}px`);
+                sparkle.addEventListener("animationend", () => sparkle.remove());
+                document.body.append(sparkle);
+            };
+
+            document.addEventListener("mousemove", (event) => {
+                const now = performance.now();
+                const moved = Math.hypot(event.clientX - lastX, event.clientY - lastY);
+
+                if (now - lastTime < 40 || moved < 12 || !sparklesAllowed()) return;
+
+                lastX = event.clientX;
+                lastY = event.clientY;
+                lastTime = now;
+                createSparkle(event.clientX, event.clientY);
+            }, { passive: true });
+        })();
+    </script>
 </body>
-
-<!-- Instagram -->
-<script async src="https://www.instagram.com/embed.js"></script>
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
-    integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
-    crossorigin="anonymous"></script>
-<script src="src/bootstrap/js/bootstrap.min.js"></script>
-<script src="src/js/index.js"></script>
-<script src="src/js/auto-contraste.js"></script>
-
-<!-- Google Tag Manager (noscript) -->
-<noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NXJQ54DS" height="0" width="0"
-        style="display:none;visibility:hidden"></iframe>
-</noscript>
-<!-- End Google Tag Manager (noscript) -->
-
-<!-- Google Analytics (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FL7J1019SC"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'G-FL7J1019SC');
-</script>
-
-<!-- Chimpmail -->
-<script
-    id="mcjs">!function (c, h, i, m, p) { m = c.createElement(h), p = c.getElementsByTagName(h)[0], m.async = 1, m.src = i, p.parentNode.insertBefore(m, p) }(document, "script", "https://chimpstatic.com/mcjs-connected/js/users/6455d0ac4083cb2cfa920df24/3ae930d986ff69476c528b2a3.js");</script>
-
 </html>

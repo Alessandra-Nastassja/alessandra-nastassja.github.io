@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+
+<head>
+    <title>ALESSANDRA NASTASSJA | FRONT-END ENGINEER </title>
+    <!-- Meta tags -->
+    <meta charset="utf-8">
+    <meta name="robots" content="index,follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description"
+        content="Alessandra Nastassja, freelancer. Front-end. Site Responsivo, Profissional. Sites únicos. Reformulação de sites.">
+    <meta name="author" content="Alessandra Nastassja">
+    <meta name="keywords" content="Alessandra Nastassja, Desenvolvimento web, freelancer, brazilian, Front-end, web design,
+    JavaScript, ux, ui, seo, sites personalizaos, sites responsivos, criação de sites">
+    <meta name="reply-to" content="alessandra.nastassja@hotmail.com">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="msvalidate.01" content="AD6BB0BF9DDAA70920219B1CA59DF611" />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./src/img/marca.jpeg" type="image/x-icon">
+    <link rel="icon" href="./src/img/marca.jpeg" type="image/x-icon">
+
+    <!-- Canonical -->
+    <link rel=”canonical” href=”www.alessandranastassja.com.br” />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./src/bootstrap/css/bootstrap.min.css">
+
+    <!-- CSS custome -->
+    <link rel="stylesheet" type="text/css" href="./src/css/style.css">
+    <link rel="stylesheet" type="text/css" href="./src/css/sobre.css">
+    <link rel="stylesheet" type="text/css" href="./src/css/menu.css">
+    <link rel="stylesheet" type="text/css" href="./src/css/efeito-imagem.css">
+    <link rel="stylesheet" type="text/css" href="./src/css/auto-contraste.css">
+
+    <!-- Aumenta/Diminui fonte -->
+    <script type="text/javascript" src="./src/js/fonte.js"></script>
+
+    <!-- Scroll -->
+    <script src="./src/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript"></script>
+
+    <script>
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+            });
+        });
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-NXJQ54DS');
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Google tradutor -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ pageLanguage: 'pt', includedLanguages: 'en,es,pt', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, gaTrack: true, gaId: 'G-FL7J1019SC' }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript"
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <!-- Google Adwords -->
+    <!-- Event snippet for Teste conversão 1 conversion page -->
+    <script>
+        gtag('event', 'conversion', { 'send_to': 'AW-851780928/taGUCKXPsZMBEMDKlJYD' });
+        gtag('config', 'AW-851780928');
+    </script>
+    <script>
+        $(document).ready(function ($) {
+            $('#freelas').on('click', function () {
+                $('.inicio').removeClass('active-menu');
+                $('.freelas').addClass('active-menu');
+            });
+            $('#sobre').on('click', function () {
+                $('.inicio').removeClass('active-menu');
+                $('.sobre').addClass('active-menu');
+            });
+            $('#inicio').on('click', function () {
+                $('.sobre').removeClass('active-menu');
+                $('.inicio').addClass('active-menu');
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <!-- Google tradutor -->
+    <div id="google_translate_element" style="position: fixed; top: 0; right: 0; z-index: -1;"></div>
+    <!--/Google tradutor -->
+
+    <nav class="nav justify-content-center">
+        <a class="nav-link active  col-6 col-lg-2" href="#Conteudo" tabindex="1">
+            <small class="badge badge-pill badge-info">1</small> Ir para conteúdo
+        </a>
+        <a class="nav-link  col-6 col-lg-2" href="#Menu" tabindex="2">
+            <small class="badge badge-pill badge-info">2</small> Ir para o menu
+        </a>
+        <a class="nav-link col-6 col-lg-2 " onClick="fonte('d');" tabindex="3">
+            <small class="badge badge-pill badge-info">
+                A-
+            </small>
+            Diminui fonte
+        </a>
+
+        <a class="nav-link col-6 col-lg-2 " onClick="fonte('a');" tabindex="4">
+            <big class="badge badge-pill badge-info">
+                A+
+            </big>
+            Aumenta fonte
+        </a>
+        <a class="nav-link  col-6 col-lg-2" href="#altocontraste" id="altocontraste" onclick="window.toggleContrast()"
+            onkeydown="window.toggleContrast()" accesskey="3"> <small class="badge badge-pill badge-info">
+                <img src="./src/img/auto-contraste.png" alt="" title="">
+            </small>
+            Auto-contrate</a>
+    </nav>
+
+    <header>
+        <div class="container-fluid" id="home">
+            <div class="mobile-display">
+                <h2 class="site-title">
+                    <a href="#">
+                        <!-- <img src="./src/img/marca.jpeg" alt="ALESSANDRA NASTASSJA" class="mb-5"> -->
+                        <h2 class="site-title acessibilidade" style="font-size: 20px; font-weight: bold;">
+                            ALESSANDRA NASTASSJA
+                        </h2>
+                    </a>
+                </h2>
+            </div>
+            <nav>
+                <a href="#" class="toggle-menu" style="color: #fff !important;">&#9776;</a>
+                <ul class="nav-list nav-open" id="nav">
+                    </li>
+                    <li><a href="/#sobremim" class="sobre acessibilidade scroll" id="sobre" tabindex="6">
+                            SOBRE MIM</a>
+                    </li>
+                    <li>
+                        <a href="/#contato" class="acessibilidade scroll" tabindex="8">CONTATO</a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/alessandra-nastassja/" target="blank" tabindex="10"
+                            class="redes">
+                            <img src="./src/img/redes-sociais/icon-linkedin.png"
+                                alt="ICONE DA REDE SOCIAL LINKEDIN, SENDO UMA IMAGEM COM UM I E UM N DESENHADOS"
+                                title="LINKEDIN">
+                        </a>
+                    </li>
+                    <li class="has-logo"><a href="/" tabindex="9">
+                            <h2 class="site-title acessibilidade">
+                                ALESSANDRA NASTASSJA
+                            </h2>
+                        </a></li>
+                    <li>
+                        <a href="https://www.instagram.com/nast.dev" target="blank" tabindex="10" class="redes">
+                            <img src="./src/img/redes-sociais/icon-instagram.png"
+                                alt="ICONE DA REDE SOCIAL INSTAGRAM, SENDO UMA IMAGEM COM UM I E UM N DESENHADOS"
+                                title="INSTAGRAM">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://medium.com/@alessandranastassja" target="blank" tabindex="13" class="redes">
+                            <img src="./src/img/redes-sociais/icon-medium.png"
+                                alt="ICONE DA REDE SOCIAL MEDIUM, SENDO UMA IMAGEM COM UM M DESENHADOS" title="MEDIUM">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/Alessandra-Nastassja" target="blank" tabindex="14" class="redes">
+                            <img src="./src/img/redes-sociais/icon-git.png"
+                                alt="ICONE DA REDE SOCIAL GIT HUB, SENDO UMA IMAGEM COM UM GATINHO DESENHADOS, SIMBOLO DA MARCA"
+                                title="GIT HUB">
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title text-center" id="exampleModalLabel">Ajuda de acessibilidade</h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Este site foi desenvolvido e pensado de forma para atender um público através
+                        da implementação de <strong> recursos de acessibilidade</strong>. <br><br> Com isso, pessoas
+                        com deficiência
+                        visual, mobilidade reduzida, podem navegar no site por intermédio de recursos,
+                        tais como o alto contraste, aumento/diminuição de fonte e navegação por teclado.
+                        <br><br>
+                        <p class="card-text acessibilidade projeto-principal-texto"
+                            style="font-size: 22px; font-family: 'Quicksand', sans-serif;">
+                            Como usar
+                        </p>
+                        Para <b>aumentar</b>, clique em A+. Caso queira voltar no tamanho normal (<b>diminuir</b>),
+                        clique em A-.
+                        Caso queira use o zoom do próprio navegador, usando ctrl + (<b>aumentar</b>) e ctrl -
+                        (<b>diminuir</b>).
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid topo">
+            <h2 class="text-center font-uppercase acessibilidade" id="Conteudo" tabindex="15">
+                Olá! Eu sou a Ale, trabalho como
+            </h2>
+            <br>
+            <h1 class="text-center font-uppercase acessibilidade" tabindex="16">
+                FRONT-END ENGINEER
+            </h1>
+            <br>
+            <br>
+            <!-- <h3 class="text-center font-uppercase acessibilidade" tabindex="17">
+                Mais conhecida como Preta Dev!
+            </h3> -->
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 col-sm-5">
+                    </div>
+                    <div class="col-12 col-sm-0">
+                        <a href="index.html#sobremim" class="scroll" tabindex="8">
+                            <img src="./src/img/seta.gif" alt="seta" width="130px;" class="mx-auto d-block" id="seta">
+                        </a>
+                    </div>
+                    <div class="col-12 col-sm-5">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Sobre mim -->
+        <div class="container-fluid main acougano" id="sobremim">
+            <div class="row justify-content-md-center" style="padding: 25px 0px;">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-4">
+                </div>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-4">
+                    <figure style="margin: 0 auto;">
+                        <img class="img-perfil mx-auto d-block" src="src/img/eu.png" alt="Imagem sobre mim"
+                            tabindex="22" title="Alessandra">
+                    </figure>
+                </div>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-4">
+                </div>
+            </div>
+            <p class="text-center font-uppercase acessibilidade portfolio portfolio-1"
+                style="font-family: 'Quicksand', sans-serif !important;" tabindex="19">Hello world!</p>
+            <hr>
+            <p class="text-center acessibilidade portfolio-1" tabindex="20"
+                style="font-family: 'Quicksand', sans-serif !important;">
+                Sou desenvolvedora Front-end com 8 anos de experiência e
+                apaixonada por tecnologia, educação e inclusão. Moro em São Paulo, Brasil.
+            </p>
+            <br>
+        </div>
+        <div class="container-fluid main acougano" id="">
+            <div class="row justify-content-md-center" style="padding: 25px 0px;">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-4">
+                </div>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-4">
+                    <figure style="margin: 0 auto;">
+                        <img class="" src="src/img/sobre-mim.jpeg" alt="Imagem do projeto Açougano." tabindex="22"
+                            title="Avatar" width="100%">
+                    </figure>
+                </div>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-4">
+                </div>
+            </div>
+            <p class="text-center font-uppercase acessibilidade portfolio portfolio-1" tabindex="19">Sobre mim</p>
+            <hr>
+            <p class="text-center acessibilidade portfolio-1" tabindex="20"
+                style="font-family: 'Quicksand', sans-serif !important;">
+                Graduada em Sistemas para Internet pela FATEC. Atualmente, cursando MBA em Engenharia de Software na USP. 
+                <br>
+            </p>
+            <br>
+            <p class="text-center acessibilidade portfolio-1" tabindex="20"
+                style="font-family: 'Quicksand', sans-serif !important;">
+
+                Veja meu
+                <a href="https://www.linkedin.com/in/alessandra-nastassja/"
+                    target="blank"><strong>Linkedin</strong></a>.
+                Ou faça download do meu
+                <a href="./src/pdf/curriculo-alessandra.pdf" target="blank"><strong>currículo</strong></a>.
+            </p>
+            <br>
+        </div>
+        <div class="container-fluid main acougano" id="sobremim">
+            <div class="row justify-content-md-center" style="padding: 25px 0px;">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-4">
+                </div>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-4">
+                    <figure style="margin: 0 auto;">
+                        <img class="" src="src/img/habilidades.jpeg" alt="Imagem do projeto Açougano." tabindex="22"
+                            title="Avatar" width="100%">
+                    </figure>
+                </div>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-4">
+                </div>
+            </div>
+            <p class="text-center font-uppercase acessibilidade portfolio portfolio-1"
+                style="font-family: 'Quicksand', sans-serif !important;" tabindex="19">
+                Habilidades
+            </p>
+            <hr>
+            <div class="row justify-content-md-center" style="padding: 25px 0px;">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-4">
+                    <p class="text-center acessibilidade m-5 font-weight-bold"
+                        style="font-size: 18px; font-family: 'Quicksand', sans-serif !important;" tabindex="20">
+                        Soft skills
+                    </p>
+                    <ul class="list-group">
+                        <li class="list-group-item m-1" id="fundo-li-habilidades">Comunicação</li>
+                        <li class="list-group-item m-1" id="fundo-li-habilidades">Liderança</li>
+                        <li class="list-group-item m-1" id="fundo-li-habilidades">Trabalho em equipe</li>
+                        <li class="list-group-item m-1" id="fundo-li-habilidades">Resolução de problemas</li>
+                        <li class="list-group-item m-1" id="fundo-li-habilidades">Resiliência</li>
+                    </ul>
+                </div>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-4">
+                    <p class="text-center acessibilidade m-5 font-weight-bold"
+                        style="font-size: 18px; font-family: 'Quicksand', sans-serif !important;" tabindex="20">
+                        Hard skills
+                    </p>
+                    <ul class="list-group">
+                        <li class="list-group-item m-1" id="fundo-li-habilidades">ANGULAR 18+ (NgRx, RxJS, NestJS)</li>
+                        <li class="list-group-item m-1" id="fundo-li-habilidades">HTML5 e CSS3 (SASS)</li>
+                        <li class="list-group-item m-1" id="fundo-li-habilidades">TYPESCRIPT</li>
+                        <li class="list-group-item m-1" id="fundo-li-habilidades">TESTES (Jest, Jasmine e Cypress)</li>
+                        <li class="list-group-item m-1" id="fundo-li-habilidades">GIT (Bitbucket and Git Hub)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row justify-content-md-center" style="padding: 25px 0px;">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-4"></div>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-4" style="text-align: center;">
+                    <img class="" src="src/img/azure-fundamentals.png" alt="Logo certificação Azure Fundamentals" tabindex="22"
+                            title="Avatar" width="30%">
+                    <img class="" src="src/img/azure-data-fundamentals.png" alt="Logo Certificação Azure Data Fundamentals" tabindex="22"
+                            title="Avatar" width="30%">
+                    <img class="" src="src/img/github-certificacao.png" alt="Logo Git Hub Copilot" tabindex="22"
+                            title="Avatar" width="30%">
+                </div>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-4"></div>
+            </div>
+            <div class="row justify-content-md-center" style="padding: 25px 0px;">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <p class="text-center acessibilidade portfolio-1" tabindex="20"
+                        style="font-family: 'Quicksand', sans-serif !important;">
+                        Certificada pela Microsoft em 
+                        <a href="https://learn.microsoft.com/pt-br/users/38067829/credentials/b78d04754703e1fa"
+                            target="blank"><strong>Azure Fundamentals</strong></a>,
+                        <a href="https://learn.microsoft.com/pt-br/users/38067829/credentials/a0640395c9e8f4d3"
+                            target="blank"><strong>Azure Data Fundamentals</strong></a> e
+                        <a href="https://www.credly.com/badges/5672090b-4c58-4bd0-a5b7-00dd35d29453"
+                            target="blank"><strong>Git Hub Copilot</strong></a>
+                        <br>
+                    </p>
+                </div>
+            </div>
+            <br>
+        </div>
+    </main>
+
+    <section id="trabalhos">
+        <div class="container-fluid main outros-trabalhos" style="background: #fff;">
+            <h3 class="text-center acessibilidade portfolio portfolio-2" tabindex="36">Projetos pessoais</h3>
+            <p class="text-center font-uppercase acessibilidade portfolio portfolio-1" tabindex="37"
+                style="color: #000;">
+                Desenvolvendo
+            </p>
+            <hr>
+            <br>
+            <div class="row justify-content-md-center" style="padding: 15px 0px 0px 0px;">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-1">
+                </div>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-5">
+                    <p>
+                        <a class="btn btn-light" data-toggle="collapse" href="#planner" role="button"
+                            aria-expanded="false" aria-controls="collapseExample1">
+                            <img class="card-img-top projeto-principal"
+                                src="./src/img/planner-finance.png"
+                                alt="Imagem do projeto Planner Finance." tabindex="22"
+                                title="Link para o site de planner" width="42%">
+                        </a>
+                    </p>
+                    <div class=" collapse" id="planner">
+                            <div class="card card-body">
+                                <p class="text-center">
+                                    <a href="https://github.com/Alessandra-Nastassja/planner-future" class="mr-2"
+                                        target="_blank">GIT HUB</a>
+                                    |<a href="https://planer-future.netlify.app/home" class="ml-2" target="_blank">VER
+                                        SITE</a>
+                                </p>
+                            </div>
+                </div>
+            </div>
+            <!-- <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-5">
+                <p>
+                    <a class="btn btn-light" data-toggle="collapse" href="#todo" role="button" aria-expanded="false"
+                        aria-controls="collapseExample1">
+                        <img class="card-img-top projeto-principal" src="./src/img/todo.png"
+                            alt="Imagem do projeto Todo." tabindex="22" title="Link para o site de todo">
+                    </a>
+                </p>
+                <div class="collapse" id="todo">
+                    <div class="card card-body">
+                        <p class="text-center"><a href="https://github.com/Alessandra-Nastassja/todo-list" class="mr-2"
+                                target="_blank">GIT HUB</a>
+                            |<a href="https://todolist-ale.netlify.app/" class="ml-2" target="_blank">VER SITE</a></p>
+                    </div>
+                </div>
+            </div> -->
+            <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-1">
+            </div>
+        </div>
+        <div class="row justify-content-md-center" style="padding: 15px 0px 0px 0px;">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-1">
+            </div>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-5">
+                <p>
+                    <a class="btn btn-light" data-toggle="collapse" href="#agenda" role="button" aria-expanded="false"
+                        aria-controls="collapseExample1">
+                        <img class="card-img-top projeto-principal" src="./src/img/agenda.jpg"
+                            alt="Imagem do projeto Açougano." tabindex="22" title="Link para o site de agenda">
+                    </a>
+                </p>
+                <!-- <div class="collapse" id="agenda">
+                        <div class="card card-body">
+                            <p class="text-center">
+                                <a
+                                    href="https://github.com/Alessandra-Nastassja/ACELERADEV-REACT/tree/master/%235-challenge"
+                                    class="mr-2" target="_blank">GIT HUB</a>
+                                |<a
+                                    href="https://snack.expo.io/@git/github.com/Alessandra-Nastassja/PROJECT-CALCULATOR" class="ml-2"
+                                    target="_blank">VER SITE</a>
+                            </p>
+                        </div>
+                    </div> -->
+            </div>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-5">
+                <p>
+                    <a class="btn btn-light" data-toggle="collapse" href="#tabela" role="button" aria-expanded="false"
+                        aria-controls="collapseExample">
+                        <img class="card-img-top projeto-principal" src="./src/img/tabela.jpg"
+                            alt="Imagem do projeto Açougano." tabindex="22" title="Link para o site do tabela">
+                    </a>
+                </p>
+                <div class="collapse" id="tabela">
+                    <div class="card card-body">
+                        <p class="text-center">
+                            <a href="https://github.com/Alessandra-Nastassja/PROJECT-TABELA-NUTRICIONAL" class="mr-2"
+                                target="_blank">GIT HUB</a>
+                            <!-- |<a
+                                    href="https://nutri-ale.netlify.app/" class="ml-2"
+                                    target="_blank">VER SITE</a></p> -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-1">
+            </div>
+        </div>
+        <div class="row justify-content-md-center" style="padding: 15px 0px 0px 0px;">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-1">
+
+            </div>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-5">
+                <p>
+                    <a class="btn btn-light" data-toggle="collapse" href="#calculadora" role="button"
+                        aria-expanded="false" aria-controls="collapseExample1">
+                        <img class="card-img-top projeto-principal" src="./src/img/calculadora.jpg"
+                            alt="Imagem do projeto Açougano." tabindex="22" title="Link para app da calculadora">
+                    </a>
+                </p>
+                <div class="collapse" id="calculadora">
+                    <div class="card card-body">
+                        <p class="text-center"><a href="https://github.com/Alessandra-Nastassja/PROJECT-CALCULATOR"
+                                class="mr-2" target="_blank">GIT HUB</a>
+                            |<a href="https://snack.expo.dev/@git/github.com/Alessandra-Nastassja/PROJECT-CALCULATOR"
+                                class="ml-2" target="_blank">VER APLICATIVO</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-5">
+                <p>
+                    <a class="btn btn-light" data-toggle="collapse" href="#instagram" role="button"
+                        aria-expanded="false" aria-controls="collapseExample">
+                        <img class="card-img-top projeto-principal" src="./src/img/instagram.jpg"
+                            alt="Imagem do projeto Açougano." tabindex="22" title="Link para o site do instagram">
+                    </a>
+                </p>
+                <div class="collapse" id="instagram">
+                    <div class="card card-body">
+                        <p class="text-center"><a
+                                href="https://github.com/Alessandra-Nastassja/ACELERADEV-REACT/tree/master/%232-challenge"
+                                class="mr-2" target="_blank">GIT HUB</a>
+                            |<a href="https://alessandra-nastassja.github.io/PROJECT-BLOG/" class="ml-2"
+                                target="_blank">VER SITE</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-1">
+            </div>
+        </div>
+        <div class="row justify-content-md-center" style="padding: 15px 0px 0px 0px;">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-1">
+
+            </div>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-5">
+                <p>
+                    <a class="btn btn-light" data-toggle="collapse" href="#catalogo" role="button" aria-expanded="false"
+                        aria-controls="collapseExample1">
+                        <img class="card-img-top projeto-principal" src="./src/img/catalogo-filmes.jpg"
+                            alt="Imagem do projeto Açougano." tabindex="22"
+                            title="Link para o site do catalogo de filmes">
+                    </a>
+                </p>
+                <div class="collapse" id="catalogo">
+                    <div class="card card-body">
+                        <p class="text-center"><a
+                                href="https://github.com/Alessandra-Nastassja/ACELERADEV-REACT/tree/master/%231-challenge"
+                                class="mr-2" target="_blank">GIT HUB</a>
+                            <!-- |<a href="https://alessandra-nastassja.github.io/PROJECT-INSULINCAL/" class="ml-2"
+                                    target="_blank">VER SITE</a> -->
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-5">
+                <p>
+                    <a class="btn btn-light" data-toggle="collapse" href="#ecoleta" role="button" aria-expanded="false"
+                        aria-controls="collapseExample">
+                        <img class="card-img-top projeto-principal" src="./src/img/ecoleta.jpg"
+                            alt="Imagem do projeto Açougano." tabindex="22" title="Link para o site do ecoleta">
+                    </a>
+                </p>
+                <div class="collapse" id="ecoleta">
+                    <div class="card card-body">
+                        <p class="text-center"><a href="https://github.com/Alessandra-Nastassja/ecoleta" class="mr-2"
+                                target="_blank">GIT HUB</a>
+                            <!-- |<a
+                                    href="https://alessandra-nastassja.github.io/PROJECT-BLOG/" class="ml-2"
+                                    target="_blank">VER SITE</a> -->
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-1">
+
+            </div>
+        </div>
+        <div class="row justify-content-md-center" style="padding: 15px 0px 0px 0px;">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-1">
+
+            </div>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-5">
+                <p>
+                    <a class="btn btn-light" data-toggle="collapse" href="#insulincal" role="button"
+                        aria-expanded="false" aria-controls="collapseExample1">
+                        <img class="card-img-top projeto-principal" src="./src/img/insulincal-atual.jpg"
+                            alt="Imagem do projeto Açougano." tabindex="22" title="Link para o site do Insulincal">
+                    </a>
+                </p>
+                <div class="collapse" id="insulincal">
+                    <div class="card card-body">
+                        <p class="text-center"><a href="https://github.com/Alessandra-Nastassja/PROJECT-INSULINCAL"
+                                class="mr-2" target="_blank">GIT HUB</a>
+                            <!-- |<a
+                                    href="https://alessandra-nastassja.github.io/PROJECT-INSULINCAL/" class="ml-2"
+                                    target="_blank">VER SITE</a> -->
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-5">
+                <p>
+                    <a class="btn btn-light" data-toggle="collapse" href="#madison" role="button" aria-expanded="false"
+                        aria-controls="collapseExample">
+                        <img class="card-img-top projeto-principal" src="./src/img/madison-atual.jpg"
+                            alt="Imagem do projeto Açougano." tabindex="22" title="Link para o site do blog">
+                    </a>
+                </p>
+                <div class="collapse" id="madison">
+                    <div class="card card-body">
+                        <p class="text-center"><a href="https://github.com/Alessandra-Nastassja/PROJECT-BLOG"
+                                class="mr-2" target="_blank">GIT HUB</a>
+                            <!-- |<a
+                                    href="https://alessandra-nastassja.github.io/PROJECT-BLOG/" class="ml-2"
+                                    target="_blank">VER SITE</a> -->
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-1">
+
+            </div>
+        </div>
+        <div class="container-fluid main designer mt-5" style="background: #fff">
+            <h3 class="text-center acessibilidade portfolio portfolio-2" tabindex="36">Produzindo contéudo</h3>
+            <br>
+            <p class="text-center font-uppercase acessibilidade portfolio portfolio-1" tabindex="37"
+                style="color: #000;">Digital
+            </p>
+            <hr>
+            <p class="text-center acessibilidade portfolio-1" tabindex="20"
+                style="font-family: 'Quicksand', sans-serif !important;">
+                Além do desenvolvimento, sou criatora de contéudo digital,
+                compartilhando dicas e ensinamentos através do meu canal
+                <a href="https://www.instagram.com/nast.dev" target="blank">
+                    <strong>@nast.dev.</strong>
+                </a>
+            </p>
+            <br>
+            <div class="row justify-content-md-center" style="padding: 25px 0px;">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 text-center">
+                    <blockquote class="instagram-media"
+                        data-instgrm-permalink="https://www.instagram.com/p/DL3JkjdONMv/" data-instgrm-version="14">
+                    </blockquote>
+                </div>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 text-center">
+                    <blockquote class="instagram-media"
+                        data-instgrm-permalink="https://www.instagram.com/p/DRLE55yEa-C/" data-instgrm-version="14">
+                    </blockquote>
+                </div>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 text-center">
+                    <blockquote class="instagram-media"
+                        data-instgrm-permalink="https://www.instagram.com/p/DLQe4TOSqO2/" data-instgrm-version="14">
+                    </blockquote>
+                </div>
+            </div>
+            <br>
+            <p class="text-center font-uppercase acessibilidade portfolio portfolio-1" tabindex="37"
+                style="color: #000;">Artigos técnicos
+            </p>
+            <hr>
+            <div class="row justify-content-md-center" style="padding: 25px 0px;">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 text-center">
+                    <div class="card">
+                        <a href="https://medium.com/@alessandranastassja/implantando-microfront-end-no-angular-15-usando-module-federation-81791b519845"
+                            target="blank">
+                            <img class="card-img-top"
+                                src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*avP1dir43pjmE-TnXHpRKw.png"
+                                alt="Imagem do cartão de visita da Web designer Alessandra, sendo posto como imagem padrão."
+                                tabindex="40" title="" style="height: 50% !important;">
+                        </a>
+                    </div>
+                    <br>
+                    <a href="https://medium.com/@alessandranastassja/implantando-microfront-end-no-angular-15-usando-module-federation-81791b519845"
+                        target="blank" class="card-text portfolio-1 acessibilidade text-center" tabindex="29"
+                        style="color: #000; font-family: 'Quicksand', sans-serif !important;">
+                        MicroFront-end no Angular 15+ usando Module Federation
+                    </a>
+                    <br>
+                </div>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 text-center">
+                    <div class="card">
+                        <a href="https://medium.com/@alessandranastassja/minha-primeira-certifica%C3%A7%C3%A3o-microsoft-a24b4ef56a1b"
+                            target="blank">
+                            <img class="card-img-top"
+                                src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*7R04cxPiPuSVmH351B3j5Q.jpeg"
+                                alt="Imagem do cartão de visita da Web designer Alessandra, sendo posto como imagem padrão."
+                                tabindex="39" title="">
+                        </a>
+                    </div>
+                    <br>
+                    <a href="https://medium.com/@alessandranastassja/minha-primeira-certifica%C3%A7%C3%A3o-microsoft-a24b4ef56a1b"
+                        target="blank" class="card-text acessibilidade portfolio-1 text-center " tabindex="29"
+                        style="color: #000; font-family: 'Quicksand', sans-serif !important;">
+                        Minha primeira certificação Microsoft
+                    </a>
+                    <br>
+                </div>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 text-center">
+                    <div class="card">
+                        <a href="http://bit.ly/escrevendo-gestao-projeto" target="blank">
+                            <img class="card-img-top"
+                                src="https://miro.medium.com/v2/resize:fit:1400/format:webp/0*fYtnAIzOnVbTplEb"
+                                alt="Imagem do cartão de visita da Web designer Alessandra, sendo posto como imagem padrão."
+                                tabindex="39" title="">
+                        </a>
+                    </div>
+                    <br>
+                    <a href="http://bit.ly/escrevendo-gestao-projeto" target="blank"
+                        class="card-text acessibilidade portfolio-1 text-center " tabindex="29"
+                        style="color: #000; font-family: 'Quicksand', sans-serif !important;">
+                        Gestão de projetos — PMBok
+                    </a>
+                    <br>
+                </div>
+            </div>
+            <br>
+            <p class="text-center font-uppercase acessibilidade portfolio portfolio-1" tabindex="37"
+                style="color: #000;">Apresentações</p>
+            <hr>
+            <div class="row justify-content-md-center" style="padding: 25px 0px;">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-4">
+                    <div class="card">
+                        <a href="https://speakerdeck.com/alessandranastassja/imersao-tech-fundamentos-do-angular"
+                            target="blank">
+                            <img class="card-img-top" src="./src/img/imersao-tech.png" alt="" tabindex="39"
+                                title="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-md-center" style="padding: 25px 0px;">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-4">
+                    <div class="card">
+                        <a href="https://speakerdeck.com/alessandranastassja/carreira-em-tecnologia-sem-filtros"
+                            target="blank">
+                            <img class="card-img-top" src="./src/img/carreira-em-tecnologia.png" alt="" tabindex="39"
+                                title="">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-4">
+                    <div class="card">
+                        <a href="https://speakerdeck.com/alessandranastassja/javascipt-um-caminho-para-o-futuro"
+                            target="blank">
+                            <img class="card-img-top" src="./src/img/BIT-Tech-Week.jpg"
+                                alt="Imagem do cartão de visita da Web designer Alessandra, sendo posto como imagem padrão."
+                                tabindex="39" title="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-md-center" style="padding: 25px 0px;">
+
+                <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-4">
+                    <div class="card">
+                        <a href="https://speakerdeck.com/alessandranastassja/javascript-avancado" target="blank">
+                            <img class="card-img-top" src="./src/img/javascript-avacando.png"
+                                alt="Imagem do cartão de visita da Web designer Alessandra, sendo posto como imagem padrão."
+                                tabindex="39" title="">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-4">
+                    <div class="card">
+                        <a href="https://speakerdeck.com/alessandranastassja/servidor-de-aplicacao-nginx"
+                            target="blank">
+                            <img class="card-img-top" src="./src/img/servidor-aplicacao.png"
+                                alt="Imagem do cartão de visita da Web designer Alessandra, sendo posto como imagem padrão."
+                                tabindex="39" title="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid main voluntariado">
+            <h3 class="text-center acessibilidade portfolio portfolio-2" tabindex="42">Trabalhos voluntários</h3>
+            <p class="text-center font-uppercase acessibilidade portfolio portfolio-1" tabindex="43"
+                style="color: #000;">
+                Interação com a comunidade tech
+            </p>
+            <hr>
+            <div class="row justify-content-md-center" style="padding: 25px 0px;">
+                <div class="col-12 col-sm-4 col-md-3">
+                    <div class="card" style="border: none;">
+                        <img 
+                            class="mx-auto d-block" 
+                            src="./src/img/voluntariado-tdc.jpeg"
+                            alt="Organização de brindes no TDC de 2019" 
+                            title="Organização de brindes no TDC de 2019" 
+                            width="210px !important">
+                    </div>
+                </div>
+                <br>
+                 <div class="col-12 col-sm-4 col-md-3">
+                    <div class="card" style="border: none;">
+                        <img 
+                            class="mx-auto d-block" 
+                            src="./src/img/voluntariado-fiap.jpeg"
+                            alt="Auxilixar de sala no worskop de Agentes de IA (2025)" 
+                            title="Auxilixar de sala no worskop de Agentes de IA (2025)"
+                            width="273px !important">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid main ferramentas">
+            <h3 class="text-center acessibilidade portfolio portfolio-2" tabindex="42">PLATAFORMAS E FERRAMENTAS</h3>
+            <p class="text-center font-uppercase acessibilidade portfolio portfolio-1" tabindex="43"
+                style="color: #000;">
+                Desenvolvendo com qualidade
+            </p>
+            <hr>
+            <div class="row justify-content-md-center" style="padding: 25px 0px;">
+                <div class="col-12 col-sm-4 col-md-3">
+                    <div class="card" style="border: none;">
+                        <img class="mx-auto d-block card-img-top" src="./src/img/ferramentas/google-analytics.png"
+                            alt="Logotipo do Google Analytics" title="Logotipo do Google Analytics">
+                    </div>
+                </div>
+                <div class="col-12 col-sm-4 col-md-3">
+                    <div class="card" style="border: none;">
+                        <img class="mx-auto d-block card-img-top" src="./src/img/ferramentas/google-adwords.png"
+                            alt="Logotipo do Google Adwords" title="Logotipo do Google Adwords">
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-md-center" style="padding: 25px 0px;">
+                <div class="col-12 col-sm-4 col-md-3">
+                    <div class="card" style="border: none;">
+                        <img class="mx-auto d-block card-img-top" src="./src/img/ferramentas/html.png"
+                            alt="Logotipo do HTML5" tabindex="48" title="Logotipo do HTML5">
+                    </div>
+                </div>
+                <div class="col-12 col-sm-4 col-md-3">
+                    <div class="card" style="border: none;">
+                        <img class="mx-auto d-block card-img-top" src="./src/img/ferramentas/css.png"
+                            alt="Logotipo do CSS3" tabindex="49" title="Logotipo do CSS3">
+                    </div>
+                </div>
+                <div class="col-12 col-sm-4 col-md-3">
+                    <div class="card" style="border: none;">
+                        <img id="teste" class="mx-auto d-block card-img-top" src="./src/img/ferramentas/angular.png"
+                            alt="Logotipo do Angular" tabindex="50" title="Logotipo do Angular">
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-md-center" style="padding: 25px 0px;">
+                <!-- <div class="col-12 col-sm-4 col-md-3">
+                    <div class="card" style="border: none;">
+                        <img class="mx-auto d-block card-img-top" src="./src/img/ferramentas/materialize.png"
+                            alt="Logotipo do Materialize" tabindex="51" title="Logotipo do Materialize">
+                    </div>
+                </div> -->
+                <div class="col-12 col-sm-4 col-md-3">
+                    <div class="card" style="border: none;">
+                        <img class="mx-auto d-block card-img-top" src="./src/img/ferramentas/git.png"
+                            alt="Logotipo do Git Hub" tabindex="52" title="Logotipo do Git Hub">
+                    </div>
+                </div>
+                <div class="col-12 col-sm-4 col-md-3">
+                    <div class="card" style="border: none;">
+                        <img class="mx-auto d-block card-img-top" src="./src/img/ferramentas/node-js.png"
+                            alt="Logotipo do Node Js" tabindex="54" title="Logotipo do Node JS">
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-md-center" style="padding: 25px 0px;">
+                <!-- <div class="col-12 col-sm-4 col-md-3">
+                    <div class="card" style="border: none;">
+                        <img class="mx-auto d-block card-img-top" src="./src/img/ferramentas/node-js.png"
+                            alt="Logotipo do Node Js" tabindex="54" title="Logotipo do Node JS">
+                    </div>
+                </div> -->
+                <!-- <div class="col-12 col-sm-4 col-md-3">
+                    <div class="card" style="border: none;">
+                        <img class="mx-auto d-block card-img-top" src="./src/img/ferramentas/php.png"
+                            alt="Logotipo do PHP" tabindex="55" title="Logotipo do PHP">
+                    </div>
+                </div> -->
+                <!-- <div class="col-12 col-sm-4 col-md-3">
+                    <div class="card" style="border: none;">
+                        <img class="mx-auto d-block card-img-top" src="./src/img/ferramentas/mysql.png"
+                            alt="Logotipo do Mysql" tabindex="56" title="Logotipo do Mysql">
+                    </div>
+                </div> -->
+            </div>
+            <div class="row justify-content-md-center" style="padding: 25px 0px;">
+                <div class="col-12 col-sm-4 col-md-3">
+                    <div class="card" style="border: none;">
+                        <img class="mx-auto d-block card-img-top" src="./src/img/ferramentas/react.png"
+                            alt="Logotipo do React" tabindex="54" title="Logotipo do React">
+                    </div>
+                </div>
+                <!-- <div class="col-12 col-sm-4 col-md-3">
+                    <div class="card" style="border: none;">
+                        <img class="mx-auto d-block card-img-top" src="./src/img/ferramentas/mongo.png"
+                            alt="Logotipo do Mongo" tabindex="55" title="Logotipo do Mongo">
+                    </div>
+                </div> -->
+                <!-- <div class="col-12 col-sm-4 col-md-3">
+                    <div class="card" style="border: none;">
+                        <img class="mx-auto d-block card-img-top" src="./src/img/ferramentas/jquery.png"
+                            alt="Logotipo do Jquery" tabindex="56" title="Logotipo do Jquery">
+                    </div>
+                </div> -->
+            </div>
+            <!-- <div class="row justify-content-md-center" style="padding: 25px 0px;">
+                <div class="col-12 col-sm-4 col-md-3">
+                    <div class="card" style="border: none;">
+                        <img class="mx-auto d-block card-img-top" src="./src/img/ferramentas/photoshop.png"
+                            alt="Logotipo do Photoshop" tabindex="54" title="Logotipo do Photoshop">
+                    </div>
+                </div>
+                <div class="col-12 col-sm-4 col-md-3">
+                    <div class="card" style="border: none;">
+                        <img class="card-img-top" src="./src/img/ferramentas/illustrator.png"
+                            alt="Logotipo do Illustrator" tabindex="55" title="Logotipo do Illustrator">
+                    </div>
+                </div>
+                <div class="col-12 col-sm-4 col-md-3">
+                    <div class="card" style="border: none;">
+                        <img class="card-img-top" src="./src/img/ferramentas/dreamweaver.png"
+                            alt="Logotipo do Dreamweaver" tabindex="56" title="Logotipo do Dreamweaver">
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </section>
+    <footer>
+        <div class="container-fluid rodape" style="background: #fff;">
+            <p class="text-center acessibilidade portfolio portfolio-2" tabindex="57"
+                style="letter-spacing: 0px !important;">
+                <a href="/#home" class="sobre acessibilidade scroll" tabindex="58">Ínicio</a> /
+                <a href="/#sobremim" class="acessibilidade scroll" tabindex="59">Sobre mim</a> /
+                <a href="/#trabalhos" class="acessibilidade scroll" tabindex="60">Portfólio</a> /
+                <a id="contato" tabindex="61">Contato</a>
+            </p>
+            <p class="text-center acessibilidade portfolio" style="padding: 25px ; letter-spacing: 5px; color: #000"
+                tabindex="62">Entre em contato</p>
+
+            <address>
+                <p class="text-center acessibilidade endereco" tabindex="63">
+                    <a href="mailto:alessandra.nastassja@hotmail.com"
+                        style="color: #000 !important;"><u>alessandra.nastassja@hotmail.com</u></a>
+                </p>
+                <br>
+            </address>
+            <br>
+            <ul class="nav justify-content-center">
+                <li class="nav-item">
+                    <a href="https://www.linkedin.com/in/alessandra-nastassja/" target="blank" tabindex="65"
+                        class="nav-link">
+                        <img src="./src/img/redes-sociais/icon-linkedin.png"
+                            alt="ICONE DA REDE SOCIAL LINKEDIN, SENDO UMA IMAGEM COM UM I E UM N DESENHADOS"
+                            title="LINKEDIN">
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://www.instagram.com/nast.dev" target="blank" tabindex="66" class="nav-link">
+                        <img src="./src/img/redes-sociais/icon-instagram.png"
+                            alt="ICONE DA REDE SOCIAL INSTAGRAM, SENDO UMA IMAGEM COM F DESENHADO" title="INSTAGRAM">
+                    </a>
+                </li>
+                <!-- <li class="nav-item">
+                    <a href="https://twitter.com/hey_nastassja" target="blank" tabindex="67" class="nav-link">
+                        <img src="./src/img/redes-sociais/icon-twitter.png"
+                            alt="ICONE DA REDE SOCIAL TWITTER, SENDO UMA IMAGEM COM UM T DESENHADOS" title="TWITTER">
+                    </a>
+                </li> -->
+                <li class="nav-item">
+                    <a href="https://medium.com/@alessandranastassja" target="blank" tabindex="68" class="nav-link">
+                        <img src="./src/img/redes-sociais/icon-medium.png"
+                            alt="ICONE DA REDE SOCIAL MEDIUM, SENDO UMA IMAGEM COM UM M DESENHADOS" title="MEDIUM">
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://github.com/Alessandra-Nastassja" target="blank" tabindex="69" class="nav-link">
+                        <img src="./src/img/redes-sociais/icon-git.png"
+                            alt="ICONE DA REDE SOCIAL GIT HUB, SENDO UMA IMAGEM COM UM GATINHO DESENHADOS, SIMBOLO DA MARCA"
+                            title="GIT HUB">
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <p class="text-center acessibilidade copyright">Copyright © 2026 | Front-end Alessandra Nastassja - Todos os
+            direitos reservados.</p>
+
+    </footer>
+</body>
+
+<!-- Instagram -->
+<script async src="https://www.instagram.com/embed.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+    integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+    crossorigin="anonymous"></script>
+<script src="src/bootstrap/js/bootstrap.min.js"></script>
+<script src="src/js/index.js"></script>
+<script src="src/js/auto-contraste.js"></script>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NXJQ54DS" height="0" width="0"
+        style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- Google Analytics (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FL7J1019SC"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-FL7J1019SC');
+</script>
+
+<!-- Chimpmail -->
+<script
+    id="mcjs">!function (c, h, i, m, p) { m = c.createElement(h), p = c.getElementsByTagName(h)[0], m.async = 1, m.src = i, p.parentNode.insertBefore(m, p) }(document, "script", "https://chimpstatic.com/mcjs-connected/js/users/6455d0ac4083cb2cfa920df24/3ae930d986ff69476c528b2a3.js");</script>
+
+</html>
