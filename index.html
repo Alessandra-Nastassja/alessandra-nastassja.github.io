@@ -46,6 +46,15 @@
             color: inherit;
         }
 
+        button:not(:disabled),
+        .button,
+        .project-links a,
+        .contact-links a,
+        .skill-list li,
+        .project-tech li {
+            cursor: pointer;
+        }
+
         a:focus-visible {
             outline: 3px solid var(--accent);
             outline-offset: 4px;
@@ -1347,6 +1356,10 @@
             box-shadow: 0 0 0 1px rgb(255 200 0 / 40%), 0 0 22px rgb(255 200 0 / 50%);
         }
 
+        .button.glow-target:hover {
+            box-shadow: 0 0 0 1px rgb(255 200 0 / 40%), 0 0 22px rgb(255 200 0 / 50%);
+        }
+
         .hero-portrait.glow-target:hover,
         .certifications a.glow-target:hover,
         .instagram-grid a.glow-target:hover {
@@ -2063,9 +2076,10 @@
             const canHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
             const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-            document.querySelectorAll(
+            const glowTargets = document.querySelectorAll(
                 ".brand, .site-nav a, .button, .hero-portrait, .certifications a, .instagram-grid a, .project-links a, .skill-list li, .projects-controls button, .contact-links a"
-            ).forEach((element) => element.classList.add("glow-target"));
+            );
+            glowTargets.forEach((element) => element.classList.add("glow-target"));
 
             if (!canHover || reducedMotion) return;
 
@@ -2092,6 +2106,19 @@
                 sparkle.addEventListener("animationend", () => sparkle.remove());
                 document.body.append(sparkle);
             };
+
+            glowTargets.forEach((element) => {
+                element.addEventListener("pointerenter", (event) => {
+                    if (!sparklesAllowed()) return;
+
+                    for (let index = 0; index < 3; index += 1) {
+                        createSparkle(
+                            event.clientX + (Math.random() - .5) * 28,
+                            event.clientY + (Math.random() - .5) * 28
+                        );
+                    }
+                });
+            });
 
             document.addEventListener("mousemove", (event) => {
                 const now = performance.now();
