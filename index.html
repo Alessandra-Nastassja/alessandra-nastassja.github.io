@@ -20,6 +20,9 @@
             --paper: #fff;
             --line: #eadfea;
             --page-width: 1120px;
+            --cursor-normal: url("./src/cursors/normal.svg") 4 2, auto;
+            --cursor-pointer: url("./src/cursors/pointer.svg") 12 2, pointer;
+            --cursor-text: url("./src/cursors/text.svg") 16 16, text;
         }
 
         *,
@@ -46,13 +49,27 @@
             color: inherit;
         }
 
+        html,
+        body {
+            cursor: var(--cursor-normal);
+        }
+
+        p,
+        h1,
+        h2,
+        h3 {
+            cursor: var(--cursor-text);
+        }
+
+        a[href],
+        summary,
         button:not(:disabled),
         .button,
         .project-links a,
         .contact-links a,
         .skill-list li,
         .project-tech li {
-            cursor: pointer;
+            cursor: var(--cursor-pointer);
         }
 
         a:focus-visible {
@@ -177,7 +194,7 @@
             border-radius: 50%;
             background: transparent;
             color: var(--accent-dark);
-            cursor: pointer;
+            cursor: var(--cursor-pointer);
             transition: background .2s ease, color .2s ease, border-color .2s ease;
         }
 
@@ -191,6 +208,13 @@
         .a11y-modal button:focus-visible {
             outline: 3px solid var(--accent);
             outline-offset: 3px;
+        }
+
+        .lang-toggle {
+            font: inherit;
+            font-size: .72rem;
+            font-weight: 700;
+            letter-spacing: .04em;
         }
 
         .a11y-toggle svg {
@@ -236,7 +260,7 @@
             color: var(--accent-dark);
             font-size: 1.1rem;
             line-height: 1;
-            cursor: pointer;
+            cursor: var(--cursor-pointer);
         }
 
         .a11y-close:hover {
@@ -271,7 +295,7 @@
             color: var(--accent-dark);
             font: inherit;
             font-size: .8rem;
-            cursor: pointer;
+            cursor: var(--cursor-pointer);
         }
 
         .a11y-option button:hover,
@@ -305,7 +329,7 @@
             color: var(--accent-dark);
             font: inherit;
             font-size: .85rem;
-            cursor: pointer;
+            cursor: var(--cursor-pointer);
         }
 
         .a11y-reset:hover {
@@ -656,7 +680,7 @@
             border-radius: 50%;
             background: var(--paper);
             color: var(--accent-dark);
-            cursor: pointer;
+            cursor: var(--cursor-pointer);
             font-size: 1.2rem;
         }
 
@@ -744,7 +768,7 @@
             border-radius: 50%;
             background: var(--paper);
             color: var(--accent-dark);
-            cursor: pointer;
+            cursor: var(--cursor-pointer);
             transition: background .2s ease, color .2s ease, border-color .2s ease;
         }
 
@@ -818,7 +842,7 @@
             color: var(--accent-dark);
             font-size: .9rem;
             font-weight: 700;
-            cursor: pointer;
+            cursor: var(--cursor-pointer);
         }
 
         .additional-projects summary:focus-visible,
@@ -1413,6 +1437,7 @@
                 <a href="#sobre">Sobre</a>
                 <a href="#contato">Contato</a>
             </nav>
+            <button class="a11y-toggle lang-toggle" id="lang-toggle" type="button" lang="en" aria-label="Translate to English" title="English">EN</button>
             <button class="a11y-toggle" id="a11y-open" type="button" aria-haspopup="dialog" aria-label="Abrir opções de acessibilidade" title="Acessibilidade">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4Zm8 6.5-5.5.9v3.3l1.9 7.4a1 1 0 0 1-1.9.5L12.9 15h-1.8l-1.6 5.6a1 1 0 0 1-1.9-.5l1.9-7.4V9.4L4 8.5a1 1 0 1 1 .3-2L12 7.8l7.7-1.3a1 1 0 1 1 .3 2Z"/></svg>
             </button>
@@ -2077,7 +2102,7 @@
             const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
             const glowTargets = document.querySelectorAll(
-                ".brand, .site-nav a, .button, .hero-portrait, .certifications a, .instagram-grid a, .project-links a, .skill-list li, .projects-controls button, .contact-links a"
+                ".brand, .site-nav a, .button, .hero-portrait, .certifications a, .instagram-grid a, .project-links a, .skill-list li, .projects-controls button, .contact-links a, .lang-toggle"
             );
             glowTargets.forEach((element) => element.classList.add("glow-target"));
 
@@ -2131,6 +2156,275 @@
                 lastTime = now;
                 createSparkle(event.clientX, event.clientY);
             }, { passive: true });
+        })();
+    </script>
+    <script>
+        (() => {
+            const button = document.getElementById("lang-toggle");
+            const storageKey = "portfolio-lang";
+
+            const texts = {
+                "Pular para o conteúdo principal": "Skip to main content",
+                "O que faço": "What I do",
+                "Projetos": "Projects",
+                "Sobre": "About",
+                "Contato": "Contact",
+                "Acessibilidade": "Accessibility",
+                "Tamanho do texto": "Text size",
+                "Alto contraste": "High contrast",
+                "Escala de cinza": "Grayscale",
+                "Sublinhar links": "Underline links",
+                "Fonte legível": "Readable font",
+                "Reduzir animações": "Reduce animations",
+                "Uso de IA:": "AI use:",
+                "ferramentas como GitHub Copilot apoiam o desenvolvimento deste portfólio, sempre com revisão humana e foco em acessibilidade.": "tools like GitHub Copilot support the development of this portfolio, always with human review and a focus on accessibility.",
+                "Restaurar padrão": "Reset to default",
+                "Tecnologia com propósito": "Technology with purpose",
+                "Com 8 anos de experiência em Angular, React e TypeScript, busco contribuir para produtos digitais acessíveis e de qualidade, em times colaborativos.": "With 8 years of experience in Angular, React and TypeScript, I aim to contribute to accessible, high-quality digital products in collaborative teams.",
+                "Conheça meus projetos": "See my projects",
+                "Currículo (PDF)": "Resume (PDF)",
+                "Olá, mundo!": "Hello, world!",
+                "Apaixonada por tecnologia, educação e inclusão. Moro em São Paulo, Brasil.": "Passionate about technology, education and inclusion. I live in São Paulo, Brazil.",
+                "8 anos": "8 years",
+                "de experiência": "of experience",
+                "Brasil": "Brazil",
+                "desenvolvimento web": "web development",
+                "no centro das soluções": "at the center of solutions",
+                "IA no desenvolvimento": "AI in development",
+                "GitHub Copilot com revisão humana": "GitHub Copilot with human review",
+                "Como posso ajudar": "How I can help",
+                "O que eu faço": "What I do",
+                "Desenvolvimento Front-end": "Front-end Development",
+                "Interfaces web responsivas, organizadas e fáceis de usar.": "Responsive, well-organized and easy-to-use web interfaces.",
+                "Experiência do usuário": "User experience",
+                "Fluxos claros e experiências pensadas para diferentes pessoas.": "Clear flows and experiences designed for different people.",
+                "Uso de IA para ganhar produtividade, com revisão humana e foco em acessibilidade.": "Using AI to boost productivity, with human review and a focus on accessibility.",
+                "Conteúdo e interfaces mais inclusivos, com atenção à navegação.": "More inclusive content and interfaces, with attention to navigation.",
+                "Qualidade de software": "Software quality",
+                "Boas práticas, testes e cuidado em cada etapa do desenvolvimento.": "Best practices, testing and care at every stage of development.",
+                "Trabalhos selecionados": "Selected work",
+                "Projetos em destaque": "Featured projects",
+                "01 / ARQUITETURA": "01 / ARCHITECTURE",
+                "Minha contribuição": "My contribution",
+                "Implementei a listagem de cartões e a comunicação da quantidade de itens entre shell e carrinho.": "I implemented the card listing and the communication of the item count between the shell and the cart.",
+                "Decisão técnica": "Technical decision",
+                "Rotas carregam aplicações remotas independentes com Module Federation.": "Routes load independent remote applications with Module Federation.",
+                "Shell Angular para integrar as experiências de cartões e carrinho.": "Angular shell to integrate the cards and cart experiences.",
+                "02 / FINANÇAS": "02 / FINANCE",
+                "03 / FINANÇAS": "03 / FINANCE",
+                "Controle de Gastos": "Expense Tracker",
+                "Implementei o formulário, o histórico, a máscara de moeda e a integração com a API mock.": "I implemented the form, the history, the currency mask and the mock API integration.",
+                "Separei formulário e histórico em componentes e concentrei as chamadas HTTP em um serviço.": "I split the form and the history into components and centralized HTTP calls in a service.",
+                "Aplicação de controle de gastos pessoais criada na Imersão Tech.": "Personal expense tracking app built during the Imersão Tech.",
+                "Desenvolvimento de uma plataforma para acompanhar patrimônio, investimentos e metas financeiras.": "Development of a platform to track net worth, investments and financial goals.",
+                "Separação entre frontend React e API Spring Boot, com PostgreSQL e Docker Compose no backend.": "Separation between a React frontend and a Spring Boot API, with PostgreSQL and Docker Compose on the backend.",
+                "Plataforma web para gestão de patrimônio, investimentos e metas financeiras pessoais.": "Web platform for managing personal net worth, investments and financial goals.",
+                "Ver projeto": "View project",
+                "04 / IMPACTO": "04 / IMPACT",
+                "Projeto para conectar pessoas a pontos de coleta de resíduos.": "Project to connect people to waste collection points.",
+                "05 / APLICATIVO": "05 / APP",
+                "Calculadora": "Calculator",
+                "Aplicativo de calculadora desenvolvido como projeto mobile.": "Calculator app built as a mobile project.",
+                "Ver aplicativo": "View app",
+                "06 / SAÚDE": "06 / HEALTH",
+                "09 / SAÚDE": "09 / HEALTH",
+                "Tabela Nutricional": "Nutrition Table",
+                "Projeto para consultar informações nutricionais de alimentos.": "Project to look up nutritional information of foods.",
+                "07 / INTERFACE": "07 / INTERFACE",
+                "Recriação de interface social desenvolvida durante um desafio front-end.": "Recreation of a social interface built during a front-end challenge.",
+                "08 / CATÁLOGO": "08 / CATALOG",
+                "Catálogo de filmes": "Movie Catalog",
+                "Projeto de interface para explorar e organizar títulos de filmes.": "Interface project to explore and organize movie titles.",
+                "Aplicação de apoio ao cálculo de insulina para o dia a dia.": "App that helps with everyday insulin calculation.",
+                "10 / CONTEÚDO": "10 / CONTENT",
+                "Projeto de blog com foco em apresentação e leitura de conteúdo.": "Blog project focused on content presentation and reading.",
+                "11 / PRODUTIVIDADE": "11 / PRODUCTIVITY",
+                "Lista de tarefas para organizar atividades e acompanhar o progresso.": "To-do list to organize activities and track progress.",
+                "Um pouco sobre mim": "A little about me",
+                "Tecnologia feita por pessoas, para pessoas.": "Technology made by people, for people.",
+                "Sou graduada em Sistemas para Internet pela FATEC e atualmente curso": "I have a degree in Internet Systems from FATEC and am currently pursuing an",
+                "MBA em Engenharia de Software": "MBA in Software Engineering",
+                "na USP.": "at USP.",
+                "Gosto de unir desenvolvimento, educação e inclusão para criar experiências digitais acessíveis e acolhedoras. Acompanhe esse trabalho no": "I enjoy combining development, education and inclusion to create accessible and welcoming digital experiences. Follow this work on",
+                "Tecnologias e práticas": "Technologies and practices",
+                "Habilidades": "Skills",
+                "Testes e qualidade": "Testing and quality",
+                "Ferramentas": "Tools",
+                "Comunidade tech": "Tech community",
+                "Embaixadora, mentora e palestrante": "Ambassador, mentor and speaker",
+                "Sou embaixadora universitária da": "I am a university ambassador at",
+                ", comunidade que impulsiona mulheres na tecnologia. Também compartilho minha experiência em palestras, mentorias e ações voluntárias.": ", a community that empowers women in tech. I also share my experience through talks, mentoring and volunteer work.",
+                "Palestrante no TDC 2026": "Speaker at TDC 2026",
+                "Compartilhando conhecimento sobre front-end, carreira e inclusão na tecnologia.": "Sharing knowledge about front-end, careers and inclusion in tech.",
+                "Mentora na Fatec SP": "Mentor at Fatec SP",
+                "Apoiando estudantes no começo da jornada em tecnologia.": "Supporting students at the start of their tech journey.",
+                "Voluntária no GitHub Copilot Day": "Volunteer at GitHub Copilot Day",
+                "Um dia como voluntária no GitHub Copilot Day. Assista ao vídeo no Instagram.": "A day as a volunteer at GitHub Copilot Day. Watch the video on Instagram.",
+                "Voluntária no workshop de Agentes de IA": "Volunteer at the AI Agents workshop",
+                "Um dia de voluntariado apoiando o workshop de Agentes de IA na FIAP.": "A volunteer day supporting the AI Agents workshop at FIAP.",
+                "Mock interview na WoMakersCode": "Mock interview at WoMakersCode",
+                "Dia de voluntariado conduzindo simulações de entrevista.": "Volunteer day running interview simulations.",
+                "Organizadora de eventos no TDC": "Event organizer at TDC",
+                "Organização de eventos da comunidade TDC.": "Organizing TDC community events.",
+                "Tem um projeto em mente?": "Have a project in mind?",
+                "Vamos criar algo incrível.": "Let's build something amazing.",
+                "Entre em contato e me conte o que você está imaginando.": "Get in touch and tell me what you have in mind.",
+                "Fale comigo": "Contact me",
+                "© 2026 Alessandra Nastassja. Todos os direitos reservados.": "© 2026 Alessandra Nastassja. All rights reserved.",
+                "Voltar ao topo ↑": "Back to top ↑",
+                "(abre em nova aba)": "(opens in a new tab)"
+            };
+
+            const labels = {
+                "Navegação principal": "Main navigation",
+                "Abrir opções de acessibilidade": "Open accessibility options",
+                "Acessibilidade": "Accessibility",
+                "Fechar": "Close",
+                "Diminuir texto": "Decrease text size",
+                "Aumentar texto": "Increase text size",
+                "Certificações": "Certifications",
+                "Resumo profissional": "Professional summary",
+                "Carrossel de projetos": "Projects carousel",
+                "Mockup do app de cartões com telas Home e Carrinho": "Cards app mockup with Home and Cart screens",
+                "Contribuição e decisão técnica": "Contribution and technical decision",
+                "Tecnologias usadas": "Technologies used",
+                "Mockup do app de controle de gastos com telas Adicionar gasto e Histórico de transações": "Expense tracker app mockup with Add expense and Transaction history screens",
+                "Tela do projeto inspirado no Instagram": "Screen of the Instagram-inspired project",
+                "Tela do catálogo de filmes": "Screen of the movie catalog",
+                "Controles do carrossel": "Carousel controls",
+                "Mostrar projeto anterior": "Show previous project",
+                "Mostrar próximo projeto": "Show next project",
+                "Conteúdos do Instagram @nast.dev": "Instagram content from @nast.dev",
+                "Carrossel de comunidade": "Community carousel",
+                "Alessandra Nastassja apresentando uma palestra no palco do TDC 2026": "Alessandra Nastassja giving a talk on the TDC 2026 stage",
+                "Alessandra Nastassja em frente ao auditório da Fatec SP": "Alessandra Nastassja in front of the Fatec SP auditorium",
+                "Voluntária no GitHub Copilot Day: assistir ao vídeo no Instagram": "Volunteer at GitHub Copilot Day: watch the video on Instagram",
+                "Alessandra Nastassja no vídeo Um dia como voluntária no GitHub Copilot Day": "Alessandra Nastassja in the video A day as a volunteer at GitHub Copilot Day",
+                "Voluntária no workshop de Agentes de IA na FIAP: ver publicação no Instagram": "Volunteer at the AI Agents workshop at FIAP: view the post on Instagram",
+                "Alessandra Nastassja apoiando participantes durante o workshop de Agentes de IA na FIAP": "Alessandra Nastassja supporting participants during the AI Agents workshop at FIAP",
+                "Alessandra Nastassja de headset durante a simulação de entrevista na WoMakersCode": "Alessandra Nastassja wearing a headset during the interview simulation at WoMakersCode",
+                "Alessandra Nastassja sorrindo e segurando uma sacola da TDC Community": "Alessandra Nastassja smiling and holding a TDC Community bag",
+                "Controles do carrossel de comunidade": "Community carousel controls",
+                "Mostrar item anterior": "Show previous item",
+                "Mostrar próximo item": "Show next item",
+                "Redes sociais": "Social media"
+            };
+
+            const prefixes = [
+                ["Certificação ", "Certification "],
+                ["Mais informações sobre ", "More information about "],
+                ["Ilustração do projeto ", "Illustration of the project "],
+                ["Tela do projeto ", "Screen of the project "],
+                ["Ver projeto ", "View project "],
+                ["Ver aplicativo ", "View app "],
+                ["GitHub ", "GitHub "],
+                ["Figma ", "Figma "]
+            ];
+
+            const newTabHint = " (abre em nova aba)";
+            const newTabHintEn = " (opens in a new tab)";
+            const attributes = ["alt", "aria-label", "title"];
+            const originalTexts = new WeakMap();
+            const originalAttributes = new WeakMap();
+
+            const normalize = (value) => value.trim().replace(/\s+/g, " ");
+
+            const translateLabel = (value) => {
+                let base = value;
+                let hints = 0;
+
+                while (base.endsWith(newTabHint)) {
+                    base = base.slice(0, -newTabHint.length);
+                    hints += 1;
+                }
+                let result = labels[base] ?? texts[base];
+
+                if (!result) {
+                    const post = base.match(/^Post (\d+) de (\d+) do perfil @nast\.dev no Instagram$/);
+                    if (post) result = `Post ${post[1]} of ${post[2]} from the @nast.dev Instagram profile`;
+                }
+
+                if (!result) {
+                    const rule = prefixes.find(([pt]) => base.startsWith(pt));
+                    if (rule) {
+                        const rest = base.slice(rule[0].length);
+                        result = rule[1] + (texts[rest] ?? rest);
+                    }
+                }
+
+                if (!result) return null;
+                return result + newTabHintEn.repeat(hints);
+            };
+
+            const textNodes = () => {
+                const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+                    acceptNode: (node) => node.parentElement && !node.parentElement.closest("script, style")
+                        ? NodeFilter.FILTER_ACCEPT
+                        : NodeFilter.FILTER_REJECT
+                });
+                const nodes = [];
+
+                while (walker.nextNode()) nodes.push(walker.currentNode);
+                return nodes;
+            };
+
+            const toEnglish = () => {
+                textNodes().forEach((node) => {
+                    const translated = texts[normalize(node.nodeValue)];
+
+                    if (!translated) return;
+                    if (!originalTexts.has(node)) originalTexts.set(node, node.nodeValue);
+                    const [, lead = "", , trail = ""] = node.nodeValue.match(/^(\s*)([\s\S]*?)(\s*)$/);
+                    node.nodeValue = lead + translated + trail;
+                });
+
+                document.querySelectorAll("[alt], [aria-label], [title]").forEach((element) => {
+                    attributes.forEach((name) => {
+                        if (!element.hasAttribute(name)) return;
+                        const translated = translateLabel(element.getAttribute(name));
+
+                        if (!translated) return;
+                        const saved = originalAttributes.get(element) ?? {};
+                        if (!(name in saved)) saved[name] = element.getAttribute(name);
+                        originalAttributes.set(element, saved);
+                        element.setAttribute(name, translated);
+                    });
+                });
+            };
+
+            const toPortuguese = () => {
+                textNodes().forEach((node) => {
+                    if (originalTexts.has(node)) node.nodeValue = originalTexts.get(node);
+                });
+
+                document.querySelectorAll("[alt], [aria-label], [title]").forEach((element) => {
+                    const saved = originalAttributes.get(element);
+
+                    if (!saved) return;
+                    Object.entries(saved).forEach(([name, value]) => element.setAttribute(name, value));
+                    originalAttributes.delete(element);
+                });
+            };
+
+            const applyLanguage = (language) => {
+                const english = language === "en";
+
+                if (english) toEnglish();
+                else toPortuguese();
+
+                document.documentElement.lang = english ? "en" : "pt-br";
+                button.textContent = english ? "PT" : "EN";
+                button.lang = english ? "pt-br" : "en";
+                button.setAttribute("aria-label", english ? "Traduzir para português" : "Translate to English");
+                button.title = english ? "Português" : "English";
+                localStorage.setItem(storageKey, language);
+            };
+
+            button.addEventListener("click", () => {
+                applyLanguage(document.documentElement.lang === "en" ? "pt" : "en");
+            });
+
+            if (localStorage.getItem(storageKey) === "en") applyLanguage("en");
         })();
     </script>
 </body>
