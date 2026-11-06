@@ -504,16 +504,24 @@
         .hero-portrait {
             position: relative;
             justify-self: center;
-            width: min(100%, 410px);
+            width: min(100%, 500px);
             margin: 0;
-            aspect-ratio: 1 / 1.08;
-            overflow: hidden;
-            border-radius: 48% 48% 30% 30%;
+            aspect-ratio: 1;
+            border-radius: 50%;
+        }
+
+        .hero-portrait::after {
+            position: absolute;
+            z-index: -1;
+            inset: 8px 0 -14px;
+            border-radius: 50% 50% 34% 34%;
             background: var(--accent-soft);
+            content: "";
         }
 
         .hero-portrait::before {
             position: absolute;
+            z-index: 2;
             inset: 22px;
             border: 1px solid rgb(174 0 179 / 24%);
             border-radius: inherit;
@@ -521,10 +529,12 @@
         }
 
         .hero-portrait img {
+            position: relative;
+            z-index: 1;
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            object-position: center 30%;
+            border-radius: 50%;
+            object-fit: contain;
         }
 
         .intro-card {
@@ -1302,7 +1312,7 @@
             }
 
             .hero-portrait {
-                width: min(76%, 330px);
+                width: min(100%, 390px);
             }
 
             .hero h1 {
